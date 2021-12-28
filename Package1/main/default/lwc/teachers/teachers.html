@@ -1,0 +1,20 @@
+<template>
+
+    <div class="iteration-holder">
+        <ul>
+          <template for:each={myTeachers} for:item="teacher">
+  
+            <div class="info-holder" key={teacher.name}>
+                <div class="info">
+                    <img src={teacher.image} />
+                    <div class="info">{teacher.name}</div>
+                </div>
+            </div>
+          </template>
+        </ul>
+  
+      </div>
+
+</template>
+
+

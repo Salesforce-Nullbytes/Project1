@@ -1,0 +1,12 @@
+<template>
+    <div class="body" onmouseover={mouseOver} onmouseleave={mouseOut}>
+        <h3>Free Trial Lesson</h3>
+    
+        <template if:true={showButton}>
+            <div class="centerButton">
+                <a href="https://qkids.com/ca/buy" title="Try now" target="_blank"><button>Try now</button></a>
+            </div>
+        </template>
+    </div>
+
+</template>

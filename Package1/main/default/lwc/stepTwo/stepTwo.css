@@ -1,0 +1,41 @@
+.body {
+    background-color: #FBF6CD;
+    padding: 30px 10% 30px 30px;
+    margin: 15px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.body:hover {
+    margin: 0;
+    transition: .5s;
+}
+
+h4 {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -20px;
+}
+
+.number_right {
+    float: right;
+    font-size: 125px;
+    padding-right: 15px;
+    margin-top: -15px;
+}
+
+.text_right {
+    float: right;
+}
+
+img {
+    float: left;
+    width: 125px;
+    padding-left: 175px;
+    margin-top: 10px;
+}

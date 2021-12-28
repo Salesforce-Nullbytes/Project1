@@ -1,0 +1,17 @@
+.info-holder {
+    float: left;
+    width: 33%;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.iteration-holder {
+    text-align: center;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    height: 250px;
+    border-radius: 30px;
+}

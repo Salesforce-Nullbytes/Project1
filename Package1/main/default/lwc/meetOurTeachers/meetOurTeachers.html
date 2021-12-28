@@ -1,0 +1,13 @@
+<template>
+    <h3>Meet Our Teachers</h3>
+    <c-teachers></c-teachers>
+
+    <template if:true={showSeeMore}>
+        <p onclick={createMoreTeachers}>See More</p>
+    </template>
+
+    <template if:true={showMoreTeachers}>
+        <c-more-teachers></c-more-teachers>
+        <p onclick={createLessTeachers}>See Less</p>
+    </template>
+</template>
