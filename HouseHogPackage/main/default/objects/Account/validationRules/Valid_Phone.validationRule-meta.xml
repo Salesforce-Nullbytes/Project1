@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Phone</fullName>
+    <active>true</active>
+    <description>Phone Number must be valid.</description>
+    <errorConditionFormula>NOT(
+   OR (
+     REGEX(  Primary_Phone_Number__c  , 
+         &quot;^(\\+1(\\s|[.-])?)?&quot;
+       &amp; &quot;((\\(\\d{3}\\))|(\\d{3}))&quot;
+       &amp; &quot;(\\s|[.-])?(\\d{3})&quot;
+       &amp; &quot;(\\s|[.-])?(\\d{4})$&quot;
+     ),
+     ISBLANK(Primary_Phone_Number__c) 
+   )
+)</errorConditionFormula>
+    <errorDisplayField>Primary_Phone_Number__c</errorDisplayField>
+    <errorMessage>Phone number must be in format &apos;### ### ####&apos;, with either spaces, periods, or hyphens in between. Area code may optionally be placed in parenthesis, and &apos;+1&apos; prefix is optional.</errorMessage>
+</ValidationRule>
