@@ -1,0 +1,20 @@
+{
+    "packageDirectories": [
+        {
+            "path": "Package1",
+            "package": "Package1",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": true
+        }
+    ],
+    "name": "Project1",
+    "namespace": "",
+    "sfdcLoginUrl": "https://curious-otter-82r2kb-dev-ed.my.salesforce.com/",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "Package1": "0Ho5f0000004CWzCAM",
+        "Package1@0.1.0-1": "04t5f000000zJUCAA2",
+        "Package1@0.1.0-2": "04t5f000000zJUHAA2"
+    }
+}

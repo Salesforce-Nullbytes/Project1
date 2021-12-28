@@ -1,0 +1,102 @@
+{
+  "appPageId" : "f11511e5-a1a5-4503-85d8-7da450f39d7e",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "id" : "b3341ee1-a115-49a7-880d-a8150b060666",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"e607a70a-37a3-477d-abca-4445030d5e67\",\"columns\":[{\"UUID\":\"1c026755-93b3-4163-b524-ef13e3fa78d3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "e607a70a-37a3-477d-abca-4445030d5e67",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "backgroundColor" : "",
+            "fontSize" : "heading-medium",
+            "headingTag" : "h3",
+            "paddingHorizontal" : "none",
+            "paddingVertical" : "none",
+            "text" : "hello there",
+            "textAlign" : "left",
+            "textDecoration" : "{}"
+          },
+          "componentName" : "dxp_base:textBlock",
+          "id" : "9b4ce70e-6b90-441a-b3a6-498cc4f9ff98",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "lineStyle" : "solid",
+            "size" : 1,
+            "width" : 100
+          },
+          "componentName" : "dxp_base:horizontalLine",
+          "id" : "c699725c-838f-47be-bd3b-af3bbf2fe4b7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "size" : "standard",
+            "stretch" : "standard",
+            "text" : "Button",
+            "type" : "primary"
+          },
+          "componentName" : "dxp_base:button",
+          "id" : "354eec5d-6118-4e58-9f89-7f330f15736e",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "richTextValue" : "<div style=\"display: flex; justify-content: center; align-items: center; margin: 50px 0; flex-direction: column; text-align: center;\"><div style=\"background-image: url(assets/img/desert.svg); background-size: cover; background-position: center; height: 300px; width: 100%; max-width: 600px; min-width: 300px;\"></div><h1 class=\"slds-text-heading_medium slds-p-bottom_x-small\">Start Building Your Page</h1> <div>Drag and drop a component into the content slots.</div></div>"
+          },
+          "componentName" : "community_builder:htmlEditor",
+          "id" : "f0c7a4c8-1e42-4079-b654-e68878f126d7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1c026755-93b3-4163-b524-ef13e3fa78d3",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "8914de6f-d6db-41be-a617-27f60946dcae",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Home",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "42ca54e7-23d0-4b3e-8b66-a9874828e104",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ce4aba9c-c074-4aa0-8096-37416efbd11a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}
