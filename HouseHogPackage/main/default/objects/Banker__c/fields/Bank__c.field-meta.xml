@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Bank that the banker is affiliated with.</description>
+    <externalId>false</externalId>
+    <label>Bank</label>
+    <referenceTo>Bank__c</referenceTo>
+    <relationshipLabel>Bankers</relationshipLabel>
+    <relationshipName>Bankers</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
