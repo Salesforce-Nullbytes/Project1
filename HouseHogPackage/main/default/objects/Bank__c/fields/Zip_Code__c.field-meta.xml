@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zip_Code__c</fullName>
+    <description>Zip code of bank headquarters.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter 5-digit code, or 9-digit code with hyphen separating first five digits from last four.</inlineHelpText>
+    <label>Zip Code</label>
+    <length>10</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
