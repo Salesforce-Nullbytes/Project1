@@ -35,7 +35,6 @@ p {
 
 img {
     float: right;
-    width: 125px;
-    padding-right: 175px;
-    margin-top: 10px;
+    height: 100px;
+    padding-right: 100px;
 }
