@@ -10,6 +10,29 @@ public class UserHandler {
     // BEFORE_INSERT
     // BEFORE_UPDATE
     // Ensure that all entity names refer to valid Agencies or Banks
+    public static void UpdateProfile(List<User> userList) {
+        Map<String, ID> pNameToId = ProfileIdMap(new Set<String>{'Realtor', 'Banker'});
+
+        for (User u : userList) {
+            String type = GetUserType(u);
+            ID expectedProfile = pNameToId.get(type);
+            if (u.ProfileId != expectedProfile) {
+                u.ProfileId = expectedProfile;
+            }
+        }
+    }
+
+    public static Map<String, ID> ProfileIDMap(Set<String> names) {
+        Map<String, ID> result = new Map<String, ID>();
+        for (Profile p : [SELECT id, name FROM Profile WHERE name IN :names]) {
+            result.put(p.name, p.id);
+        }
+        return result;
+    }
+
+    // BEFORE_INSERT
+    // BEFORE_UPDATE
+    // Ensure that all entity names refer to valid Agencies or Banks
     public static void ValidateEntityNames(List<User> insertedUsers) {
         
         Map<String, Set<String>> entityMapByType = UserTypeToEntityNames(insertedUsers);

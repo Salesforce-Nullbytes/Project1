@@ -2,9 +2,11 @@ trigger UserTrigger on User (before insert, before update, before delete, after 
     switch on trigger.operationType {
         when BEFORE_INSERT {
             UserHandler.DeactivateUsers(trigger.new); // DEFAULT INACTIVE
+            UserHandler.UpdateProfile(trigger.new);
             UserHandler.ValidateEntityNames(trigger.new);
         }
         when BEFORE_UPDATE {
+            UserHandler.UpdateProfile(trigger.new);
             UserHandler.ValidateEntityNames(trigger.new);
         }
         when BEFORE_DELETE {} // CANNOT DELETE USERS
