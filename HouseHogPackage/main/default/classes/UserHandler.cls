@@ -1,6 +1,13 @@
 public class UserHandler {
 
     // BEFORE_INSERT
+    public static void DeactivateUsers(List<User> insertedUsers) {
+        for (User newUser : insertedUsers) {
+            newUser.isActive = false;
+        }
+    }
+
+    // BEFORE_INSERT
     // Ensure that all entity names refer to valid Agencies or Banks
     public static void ValidateEntityNames(List<User> insertedUsers) {
         
@@ -98,16 +105,39 @@ public class UserHandler {
     // AFTER_INSERT
     // Add proxy objects (Realtor or Banker) for user, given its type
     public static void AddProxyObjects(List<User> insertedUsers) {
-        Banker__c[] newBankers = new Banker__c[]{};
-        Realtor__c[] newRealtors = new Realtor__c[]{};
-
+        Set<ID> realtorUserIDs = new Set<ID>();
+        Set<ID> bankerUserIDs = new Set<ID>();
+        
         for (User newUser : insertedUsers) {
             String userType = String.valueOf(newUser.User_Type__c);
+
             switch on userType {
-                when 'Realtor' { newRealtors.add(RealtorFromUser(newUser)); }
-                when 'Banker' { newBankers.add(BankerFromUser(newUser)); }
+                when 'Realtor' { realtorUserIDs.add(newUser.id); }
+                when 'Banker' { bankerUserIDs.add(newUser.id); }
                 // No action if not a Realtor or Banker type.
             }
+        }
+
+        AddRealtorsAndBankers(realtorUserIDs, bankerUserIDs);
+    }
+    //
+    // @future -> Avoids MIXED_DML_OPERATION error
+    //     Can't perform DML on both 'setup' objects (like User)
+    //     and on 'non-setup' object (e.g. custom obj) in SAME CONTEXT.
+    //     Running non-setup Inserts in a @future resolves the problem.
+    @future
+    public static void AddRealtorsAndBankers(Set<ID> realtorUsers, Set<ID> bankerUsers) {
+        Realtor__c[] newRealtors = new Realtor__c[]{};
+        Banker__c[] newBankers = new Banker__c[]{};
+
+        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Type__c 
+                            FROM User WHERE id IN :realtorUsers]) {
+            newRealtors.add(RealtorFromUser(newUser));
+        }
+
+        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Type__c
+                            FROM User WHERE id IN :bankerUsers]) {
+            newBankers.add(BankerFromUser(newUser));
         }
 
         Insert newBankers;
@@ -119,12 +149,13 @@ public class UserHandler {
 
         // Add error if user is not a realtor
         String checkType = String.valueOf(fromUser.User_Type__c);
+
         if (checkType != 'Realtor') {
             newRealtor.addError('User is not a realtor type! Type is: ' + checkType);
             return newRealtor;
         }
 
-        newRealtor.OwnerId = fromUser.id;
+        //newRealtor.OwnerId = fromUser.id;
         newRealtor.Email_Address__c = fromUser.email;
         newRealtor.Phone_Number__c = fromUser.phone;
         newRealtor.Agency__c = fromUser.Entity_ID__c;
@@ -143,7 +174,7 @@ public class UserHandler {
             return newBanker;
         }
 
-        newBanker.OwnerId = fromUser.id;
+        //newBanker.OwnerId = fromUser.id;
         newBanker.Email_Address__c = fromUser.email;
         newBanker.Phone_Number__c = fromUser.phone;
         newBanker.Bank__c = fromUser.Entity_ID__c;
