@@ -155,7 +155,7 @@ public class UserHandler {
             return newRealtor;
         }
 
-        //newRealtor.OwnerId = fromUser.id;
+        newRealtor.Related_User__c = fromUser.id;
         newRealtor.Email_Address__c = fromUser.email;
         newRealtor.Phone_Number__c = fromUser.phone;
         newRealtor.Agency__c = fromUser.Entity_ID__c;
@@ -174,7 +174,7 @@ public class UserHandler {
             return newBanker;
         }
 
-        //newBanker.OwnerId = fromUser.id;
+        newBanker.Related_User__c = fromUser.id;
         newBanker.Email_Address__c = fromUser.email;
         newBanker.Phone_Number__c = fromUser.phone;
         newBanker.Bank__c = fromUser.Entity_ID__c;
