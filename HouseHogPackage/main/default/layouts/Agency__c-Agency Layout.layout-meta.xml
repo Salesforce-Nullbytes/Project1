@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>Email_Address__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>GroupId__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

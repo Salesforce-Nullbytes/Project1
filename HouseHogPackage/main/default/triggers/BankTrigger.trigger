@@ -1,7 +1,7 @@
-trigger AgencyTrigger on Agency__c (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+trigger BankTrigger on Bank__c (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
     switch on trigger.operationType {
         when BEFORE_INSERT {
-            AgencyHandler.CreateAgencyGroups(trigger.new);
+            BankHandler.CreateBankGroups(trigger.new);
         }
         when BEFORE_UPDATE {}
         when BEFORE_DELETE {}
