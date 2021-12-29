@@ -24,6 +24,13 @@
         "componentName" : "community_layout:section",
         "id" : "fec752dc-b112-4e9c-aab0-08262bd0285c",
         "regions" : [ {
+          "components" : [ {
+            "componentAttributes" : { },
+            "componentName" : "c:header",
+            "id" : "ad98e464-b8a7-434f-8978-4e8794153224",
+            "renditionMap" : { },
+            "type" : "component"
+          } ],
           "id" : "9b5662a6-3cdf-4f01-a11a-7b732704b80b",
           "regionLabel" : "Theme Header",
           "regionName" : "headerSection",
@@ -47,6 +54,13 @@
         "componentName" : "community_layout:section",
         "id" : "76ed23db-2b51-4d6d-af27-6ccf34e6978b",
         "regions" : [ {
+          "components" : [ {
+            "componentAttributes" : { },
+            "componentName" : "c:footer",
+            "id" : "80f466de-10b2-41a7-81a6-e0a8c217ac61",
+            "renditionMap" : { },
+            "type" : "component"
+          } ],
           "id" : "d1e6f511-fc57-47a1-b659-ad01976157bc",
           "regionLabel" : "Theme Footer",
           "regionName" : "footerSection",

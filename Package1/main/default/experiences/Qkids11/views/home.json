@@ -14,52 +14,44 @@
       "id" : "e607a70a-37a3-477d-abca-4445030d5e67",
       "regions" : [ {
         "components" : [ {
-          "componentAttributes" : {
-            "backgroundColor" : "",
-            "fontSize" : "heading-medium",
-            "headingTag" : "h3",
-            "paddingHorizontal" : "none",
-            "paddingVertical" : "none",
-            "text" : "hello there",
-            "textAlign" : "left",
-            "textDecoration" : "{}"
-          },
-          "componentName" : "dxp_base:textBlock",
-          "id" : "9b4ce70e-6b90-441a-b3a6-498cc4f9ff98",
+          "componentAttributes" : { },
+          "componentName" : "c:learnEnglishOnline",
+          "id" : "284cd015-033d-4996-b113-30c30c074d3b",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         }, {
-          "componentAttributes" : {
-            "alignment" : "center",
-            "lineStyle" : "solid",
-            "size" : 1,
-            "width" : 100
-          },
-          "componentName" : "dxp_base:horizontalLine",
-          "id" : "c699725c-838f-47be-bd3b-af3bbf2fe4b7",
+          "componentAttributes" : { },
+          "componentName" : "c:stepOne",
+          "id" : "8b93c55f-208c-4cc5-ae5b-c05c5983e08d",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         }, {
-          "componentAttributes" : {
-            "alignment" : "center",
-            "size" : "standard",
-            "stretch" : "standard",
-            "text" : "Button",
-            "type" : "primary"
-          },
-          "componentName" : "dxp_base:button",
-          "id" : "354eec5d-6118-4e58-9f89-7f330f15736e",
+          "componentAttributes" : { },
+          "componentName" : "c:stepTwo",
+          "id" : "94c8ce75-3ae1-4cb1-9412-aaa13fcd7dea",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         }, {
-          "componentAttributes" : {
-            "richTextValue" : "<div style=\"display: flex; justify-content: center; align-items: center; margin: 50px 0; flex-direction: column; text-align: center;\"><div style=\"background-image: url(assets/img/desert.svg); background-size: cover; background-position: center; height: 300px; width: 100%; max-width: 600px; min-width: 300px;\"></div><h1 class=\"slds-text-heading_medium slds-p-bottom_x-small\">Start Building Your Page</h1> <div>Drag and drop a component into the content slots.</div></div>"
-          },
-          "componentName" : "community_builder:htmlEditor",
-          "id" : "f0c7a4c8-1e42-4079-b654-e68878f126d7",
+          "componentAttributes" : { },
+          "componentName" : "c:stepThree",
+          "id" : "458960c8-c6f0-4bb9-85ae-c0117789dfef",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:meetOurTeachers",
+          "id" : "08f3032e-c6bd-40ed-8071-7e860fd0674a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:freeTrialLesson",
+          "id" : "70a9865e-1e8f-4ce6-83b3-9943e81b131e",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"

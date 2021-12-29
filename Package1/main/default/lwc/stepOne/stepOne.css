@@ -1,9 +1,7 @@
 .body {
     background-color: #FBCDCD;
     padding: 30px 30px 30px 10%;
-    margin: 15px;
     height: 150px;
-    margin-bottom: 15px;
 }
 
 /*.body:hover {
@@ -28,7 +26,7 @@ p {
     float: left;
     font-size: 125px;
     padding-right: 15px;
-    margin-top: 0px;
+    margin-top: -50px;
 }
 
 .text_left {

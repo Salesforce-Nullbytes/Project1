@@ -1,9 +1,7 @@
 .body {
     background-color: #FBF6CD;
     padding: 30px 10% 30px 30px;
-    margin: 15px;
     height: 150px;
-    margin-bottom: 15px;
 }
 
 /*.body:hover {
@@ -19,14 +17,14 @@ h4 {
 p {
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: -20px;
+    margin-top: 0px;
 }
 
 .number_right {
     float: right;
     font-size: 125px;
     padding-right: 15px;
-    margin-top: -15px;
+    margin-top: -50px;
 }
 
 .text_right {
