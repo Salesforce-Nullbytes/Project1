@@ -24,7 +24,7 @@ public class AgencyHandler {
 
         // Add references to the added groups...
         for (Agency__c newAgency: insertedAgencies) {
-            newAgency.GroupId__C = groupMap.get('agencyGrp' + newAgency.name);
+            newAgency.GroupId__c = groupMap.get('agencyGrp' + newAgency.name);
         }
     }
 }
