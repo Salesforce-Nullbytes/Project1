@@ -19,7 +19,7 @@ public class UserHandler {
 
             if (entity == null) { continue; }
 
-            String userType = String.valueOf(newUser.User_Type__c);
+            String userType = String.valueOf(newUser.User_Category__c);
             switch on userType {
                 when 'Realtor' { agencyNames.add(entity); }
                 when 'Banker' { bankNames.add(entity); }
@@ -41,7 +41,7 @@ public class UserHandler {
             }
 
             String entity = newUser.Entity_Affiliation__c;
-            String userType = String.valueOf(newUser.User_Type__c);
+            String userType = String.valueOf(newUser.User_Category__c);
 
             switch on userType {
                 when 'Realtor' {
@@ -109,7 +109,7 @@ public class UserHandler {
         Set<ID> bankerUserIDs = new Set<ID>();
         
         for (User newUser : insertedUsers) {
-            String userType = String.valueOf(newUser.User_Type__c);
+            String userType = String.valueOf(newUser.User_Category__c);
 
             switch on userType {
                 when 'Realtor' { realtorUserIDs.add(newUser.id); }
@@ -130,12 +130,12 @@ public class UserHandler {
         Realtor__c[] newRealtors = new Realtor__c[]{};
         Banker__c[] newBankers = new Banker__c[]{};
 
-        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Type__c 
+        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Category__c 
                             FROM User WHERE id IN :realtorUsers]) {
             newRealtors.add(RealtorFromUser(newUser));
         }
 
-        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Type__c
+        for (User newUser : [SELECT id, email, phone, Entity_ID__c, User_Category__c
                             FROM User WHERE id IN :bankerUsers]) {
             newBankers.add(BankerFromUser(newUser));
         }
@@ -148,14 +148,14 @@ public class UserHandler {
         Realtor__c newRealtor = new Realtor__c();
 
         // Add error if user is not a realtor
-        String checkType = String.valueOf(fromUser.User_Type__c);
+        String checkType = String.valueOf(fromUser.User_Category__c);
 
         if (checkType != 'Realtor') {
             newRealtor.addError('User is not a realtor type! Type is: ' + checkType);
             return newRealtor;
         }
 
-        //newRealtor.OwnerId = fromUser.id;
+        newRealtor.Related_User__c = fromUser.id;
         newRealtor.Email_Address__c = fromUser.email;
         newRealtor.Phone_Number__c = fromUser.phone;
         newRealtor.Agency__c = fromUser.Entity_ID__c;
@@ -167,14 +167,14 @@ public class UserHandler {
         Banker__c newBanker = new Banker__c();
 
         // Add error if user is not a banker
-        String checkType = String.valueOf(fromUser.User_Type__c);
+        String checkType = String.valueOf(fromUser.User_Category__c);
 
         if (checkType != 'Banker') {
             newBanker.addError('User is not a banker type! Type is: ' + checkType);
             return newBanker;
         }
 
-        //newBanker.OwnerId = fromUser.id;
+        newBanker.Related_User__c = fromUser.id;
         newBanker.Email_Address__c = fromUser.email;
         newBanker.Phone_Number__c = fromUser.phone;
         newBanker.Bank__c = fromUser.Entity_ID__c;
@@ -202,7 +202,7 @@ public class UserHandler {
     }
 
     public static String getGroupPrefix(User fromUser) {
-        String userType = String.valueOf(fromUser.User_Type__c);
+        String userType = String.valueOf(fromUser.User_Category__c);
 
         switch on userType {
             when 'Realtor' { return 'agencyGrp'; }

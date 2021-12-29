@@ -8,7 +8,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>User_Type__c</field>
+                <field>User_Category__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
