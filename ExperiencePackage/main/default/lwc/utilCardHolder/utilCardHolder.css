@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex: 100%;
+}
+.info {
+    border: 2px solid var(--black);
+    background-color: var(--grey);
+    color: var(--black);
+    box-shadow: inset 0 -2px 0px var(--black);
+    padding: 0;
+    flex: 100%;
+    margin: 0;
+}
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    max-height: 10rem;
+}
+.round {
+    border-radius: 8px;
+}
+h3 {
+    padding: 0.4rem;
+    margin: 0;
+}
