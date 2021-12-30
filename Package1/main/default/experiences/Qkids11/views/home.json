@@ -49,6 +49,37 @@
           "renditionMap" : { },
           "type" : "component"
         }, {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "lineStyle" : "solid",
+            "size" : 1,
+            "width" : 100
+          },
+          "componentName" : "dxp_base:horizontalLine",
+          "id" : "b5358fa8-287f-4d02-a11f-26104b717f80",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:signUp",
+          "id" : "2d52a63d-1bcc-4092-a82f-94ae36f41c0e",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "lineStyle" : "solid",
+            "size" : 1,
+            "width" : 100
+          },
+          "componentName" : "dxp_base:horizontalLine",
+          "id" : "b783f9cc-7f20-459a-b74f-4ee263df83bc",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
           "componentAttributes" : { },
           "componentName" : "c:freeTrialLesson",
           "id" : "70a9865e-1e8f-4ce6-83b3-9943e81b131e",
