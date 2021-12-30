@@ -1,6 +1,6 @@
 <template>
     <div class="splash-image">
-        <img src="./resources/splash.jpg" alt="HouseHog splash image" />
+        <img src={splashImage} alt="HouseHog splash image" />
     </div>
     <template if:false={signup}>
         <c-util-content-box my-heading="Welcome to HouseHog!">
@@ -13,7 +13,6 @@
         </c-util-content-box>
     </template>
     <template if:true={signup}>
-        <p> In Splash Signup</p>
         <c-util-content-box my-heading="Start your HouseHog account now!" input>
             <br>
             <template for:each={inputs} for:item="input" for:index="index">

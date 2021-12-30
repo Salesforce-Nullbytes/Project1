@@ -16,16 +16,7 @@
         "components" : [ {
           "componentAttributes" : { },
           "componentName" : "c:app",
-          "id" : "c9473aad-92ec-4ead-a178-304f0f6fadcd",
-          "renderPriority" : "NEUTRAL",
-          "renditionMap" : { },
-          "type" : "component"
-        }, {
-          "componentAttributes" : {
-            "richTextValue" : "<div style=\"display: flex; justify-content: center; align-items: center; margin: 50px 0; flex-direction: column; text-align: center;\"><div style=\"background-image: url(assets/img/desert.svg); background-size: cover; background-position: center; height: 300px; width: 100%; max-width: 600px; min-width: 300px;\"></div><h1 class=\"slds-text-heading_medium slds-p-bottom_x-small\">Start Building Your Page</h1> <div>Drag and drop a component into the content slots.</div></div>"
-          },
-          "componentName" : "community_builder:htmlEditor",
-          "id" : "a176e727-e9f3-43a3-a802-ac87bcfed7b4",
+          "id" : "10b38f31-8d8c-4aed-9ed6-79b62804f800",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"

@@ -3,10 +3,11 @@
 <!-- define 'event-key' to fire event with key as detail ("nav" or "btn" event)-->
 <!--   if key defined, set activeOn to same key for highlighting -->
 <template>
-    <template if:false={anchor}>
+    <button class={computeClass} onclick={triggerEvent}>{myLabel}</button>
+    <!-- <template if:false={anchor}>
         <button class={computeClass} onclick={triggerEvent}>{myLabel}</button>
     </template>
     <template if:true={anchor}>
-        <a href="#" class={computeClass} onclick={triggerEvent}>{myLabel}</a>
-    </template>
+        <a class={computeClass} onclick={triggerEvent}>{myLabel}</a>
+    </template> -->
 </template>

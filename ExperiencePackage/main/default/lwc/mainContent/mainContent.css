@@ -2,16 +2,13 @@
 :host {
     flex: 100%;
     display: flex;
-}
-main {
-    flex: 100%;
-    display:flex;
+    padding: 1rem;
     position: relative;
 }
 p {
     border: 4px solid var(--selectable);
 }
-/* c-util-modal c-util-content-box {
+c-util-modal c-util-content-box {
     max-width: 25rem;
     margin: auto;
-} */
+}

@@ -1,65 +1,63 @@
 <template>
-    <main>
-        <!-- Only one component should show... -->
-        <template if:true={showSplash}>
-            <c-page-splash
-                onsignin={handleSignIn}
-                onregister={handleRegister}
-                signup={signUp}
-            ></c-page-splash>
-        </template>
-        <template if:true={showHomes}>
-            <p>Showing Homes</p>
-            <!-- <page-homes
-                user={user}
-                favorite-homes={favoriteHomes}
-            ></page-homes> -->
-        </template>
-        <template if:true={showRealtors}>
-            <p>Showing Realtors</p>
-            <!-- <page-realtors
-                user={user}
-                user-realtor={userRealtor}
-            ></page-realtors> -->
-        </template>
-        <template if:true={showFinancing}>
-            <p>Showing Financing</p>
-            <!-- <page-financing
-                user={user}
-            ></page-financing> -->
-        </template>
-        <template if:true={showProfile}>
-            <p>Showing Profile</p>
-            <!-- <page-profile
-                user={user}
-                user-realtor={userRealtor}
-                favorite-homes={favoriteHomes}
-            ></page-profile> -->
-        </template>
+    <!-- Only one component should show... -->
+    <template if:true={showSplash}>
+        <c-page-splash
+            onsignin={handleSignIn}
+            onregister={handleRegister}
+            signup={signUp}
+        ></c-page-splash>
+    </template>
+    <template if:true={showHomes}>
+        <p>Showing Homes</p>
+        <!-- <page-homes
+            user={user}
+            favorite-homes={favoriteHomes}
+        ></page-homes> -->
+    </template>
+    <template if:true={showRealtors}>
+        <p>Showing Realtors</p>
+        <!-- <page-realtors
+            user={user}
+            user-realtor={userRealtor}
+        ></page-realtors> -->
+    </template>
+    <template if:true={showFinancing}>
+        <p>Showing Financing</p>
+        <!-- <page-financing
+            user={user}
+        ></page-financing> -->
+    </template>
+    <template if:true={showProfile}>
+        <p>Showing Profile</p>
+        <!-- <page-profile
+            user={user}
+            user-realtor={userRealtor}
+            favorite-homes={favoriteHomes}
+        ></page-profile> -->
+    </template>
 
-        <!-- Atop other sections: modal for user login -->
-        <c-util-modal show={signInPrompt}
-            my-label="User Login"
-            onbtn={handleCloseModal}
-        >
-            <br>
-            <c-util-content-box input round>
-                <div class="inputs">
-                    <c-util-input-box inline track-change
-                        my-name="Username:"
-                        my-value={promptUsername}
-                    ></c-util-input-box>
-                    <c-util-input-box inline track-change password
-                        my-name="Password:"
-                        my-value={promptPassword}
-                    ></c-util-input-box>
-                    <c-util-button-link
-                        my-label="Log in"
-                        event-key="login"
-                        onbtn={handleBtn}
-                    ></c-util-button-link>
-                </div>
-            </c-util-content-box>
-        </c-util-modal>
-    </main>
+    <!-- Atop other sections: modal for user login -->
+    <c-util-modal show={signInPrompt}
+        my-label="User Login"
+        onbtn={handleCloseModal}
+    >
+        <br>
+        <c-util-content-box input round>
+            <div class="inputs">
+                <c-util-input-box inline track-change
+                    my-name="Username:"
+                    my-value={promptUsername}
+                ></c-util-input-box>
+                <c-util-input-box inline track-change password
+                    my-name="Password:"
+                    my-value={promptPassword}
+                ></c-util-input-box>
+                <c-util-button-link
+                    my-label="Log in"
+                    event-key="login"
+                    onbtn={handleBtn}
+                ></c-util-button-link>
+            </div>
+        </c-util-content-box>
+    </c-util-modal>
 </template>

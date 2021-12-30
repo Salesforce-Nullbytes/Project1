@@ -46,7 +46,7 @@
     "ButtonTextTransform" : "none",
     "ColumnSpacerSizeDesktop" : "1rem",
     "ColumnSpacerSizeMobile" : "0.75rem",
-    "ComponentSpacerSizeDesktop" : "1.5rem",
+    "ComponentSpacerSizeDesktop" : "1.625rem",
     "ComponentSpacerSizeMobile" : "1.5rem",
     "FormElementBackgroundColor" : "var(--dxp-g-root)",
     "FormElementBorderColor" : "var(--dxp-g-neutral-1)",

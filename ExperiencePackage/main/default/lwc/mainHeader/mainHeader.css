@@ -1,4 +1,4 @@
-header {
+:host {
     display:flex;
     justify-content: space-between;
     border-bottom: 2px solid black;
@@ -9,9 +9,10 @@ header {
     display: flex;
     flex-wrap: nowrap;
 }
-nav {
+.nav {
     margin: 4px;
     line-height: 2rem;
+    display: flex;
 }
 .account {
     align-self: flex-end;
@@ -22,7 +23,7 @@ nav {
 }
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: inline-block;
-    margin: 0;
     margin-right: 32px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }

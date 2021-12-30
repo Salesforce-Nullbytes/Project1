@@ -59,32 +59,32 @@ export default class MainContent extends LightningElement {
     }
 
     // // For the modal to appear on top of page...
-    // handleCloseModal() {
-    //     // HANDLED BY APP COMPONENT
-    // }
+    handleCloseModal() {
+        // HANDLED BY APP COMPONENT
+    }
 
-    // handleBtn(event) {
-    //     if (event.detail != "login") return;
+    handleBtn(event) {
+        if (event.detail != "login") return;
 
-    //     // Must compare user to data set & retrieve full details
-    //     this.getUser(this.promptUsername, this.promptPassword);
-    //     this.dispatchEvent(new CustomEvent('signin'));
-    // }
+        // Must compare user to data set & retrieve full details
+        this.getUser(this.promptUsername, this.promptPassword);
+        this.dispatchEvent(new CustomEvent('signin'));
+    }
 
-    // handleRegister(event) {
-    //     let params = event.detail;
-    //     // Would normally send data to server
-    //     for (let user of this.usersFull) {
-    //         if (user.username === params.username) {
-    //             alert("Username is already taken!");
-    //             return;
-    //         }
-    //     }
-    //     this.usersFull.push(params);
-    //     alert("Registration was successful!");
-    //     this.user = params;
-    //     this.dispatchEvent(new CustomEvent('signin'));
-    // }
+    handleRegister(event) {
+        let params = event.detail;
+        // Would normally send data to server
+        for (let user of this.usersFull) {
+            if (user.username === params.username) {
+                alert("Username is already taken!");
+                return;
+            }
+        }
+        this.usersFull.push(params);
+        alert("Registration was successful!");
+        this.user = params;
+        this.dispatchEvent(new CustomEvent('signin'));
+    }
 
     // // NOTE: this should be handled on back-end server
     // getUser(username, password) {

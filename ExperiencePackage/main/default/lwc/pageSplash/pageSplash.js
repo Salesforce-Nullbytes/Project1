@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import splash from '@salesforce/resourceUrl/splash';
 
 export default class PageSplash extends LightningElement {
     // True will render the sign-up page
@@ -10,6 +11,8 @@ export default class PageSplash extends LightningElement {
         { name: "Username", value: ""},
         { name: "Password", value: ""},
     ];
+
+    splashImage = splash;
 
     handleRegisterClick() {
         // Send event up to c-content (who holds main data)
