@@ -1,8 +1,16 @@
 <template>
     <div class="column">
-        <a href="https://qkids.com/ca/buy" title="New Teacher Sign Up" target="_blank"><button>New Teacher<br/>Sign Up</button></a>
+        <button onclick={clickTeacherSignup}>New Teacher<br/>Sign Up</button>
     </div>
     <div class="column">
-        <a href="https://qkids.com/ca/buy" title="New Student Sign Up" target="_blank"><button>New Student<br/>Sign Up</button></a>
+        <button onclick={clickStudentSignup}>New Student<br/>Sign Up</button>
     </div>
+
+    <template if:true={showNewTeacher}>
+        <c-new-teacher></c-new-teacher>
+    </template>
+
+    <template if:true={showNewStudent}>
+        <c-new-student></c-new-student>
+    </template>
 </template>
