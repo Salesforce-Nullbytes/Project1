@@ -38,9 +38,9 @@
                 <label>Sold</label>
             </value>
             <value>
-                <fullName>Cancelled Sale</fullName>
+                <fullName>Cancelled</fullName>
                 <default>false</default>
-                <label>Cancelled Sale</label>
+                <label>Cancelled</label>
             </value>
         </valueSetDefinition>
     </valueSet>
