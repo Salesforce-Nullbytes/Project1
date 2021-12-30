@@ -38,29 +38,28 @@
         </template>
 
         <!-- Atop other sections: modal for user login -->
-        <p>Modal would be inserted...</p>
-        <!-- <util-modal show={signInPrompt}
+        <c-util-modal show={signInPrompt}
             my-label="User Login"
             onbtn={handleCloseModal}
         >
             <br>
-            <util-content-box input round>
+            <c-util-content-box input round>
                 <div class="inputs">
-                    <util-input-box inline track-change
+                    <!-- <util-input-box inline track-change
                         my-name="Username:"
                         my-value={promptUsername}
                     ></util-input-box>
                     <util-input-box inline track-change password
                         my-name="Password:"
                         my-value={promptPassword}
-                    ></util-input-box>
-                    <util-button-link
+                    ></util-input-box> -->
+                    <c-util-button-link
                         my-label="Log in"
                         event-key="login"
                         onbtn={handleBtn}
-                    ></util-button-link>
+                    ></c-util-button-link>
                 </div>
-            </util-content-box>
-        </util-modal> -->
+            </c-util-content-box>
+        </c-util-modal>
     </main>
 </template>
