@@ -14,11 +14,9 @@
       "id" : "f130cea4-a954-42d0-8b69-1ebacf83694a",
       "regions" : [ {
         "components" : [ {
-          "componentAttributes" : {
-            "richTextValue" : "<p>Hello HouseHog!</p>"
-          },
-          "componentName" : "community_builder:htmlEditor",
-          "id" : "48005a01-e36e-416a-9aa3-618644452c72",
+          "componentAttributes" : { },
+          "componentName" : "c:app",
+          "id" : "c9473aad-92ec-4ead-a178-304f0f6fadcd",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"

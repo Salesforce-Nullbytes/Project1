@@ -1,0 +1,67 @@
+<template>
+    <main>
+        <!-- Only one component should show... -->
+        <template if:true={showSplash}>
+            <p>Showing Splash</p>
+            <!-- <page-splash
+                onsignin={handleSignIn}
+                onregister={handleRegister}
+                signup={signUp}
+            ></page-splash> -->
+        </template>
+        <template if:true={showHomes}>
+            <p>Showing Homes</p>
+            <!-- <page-homes
+                user={user}
+                favorite-homes={favoriteHomes}
+            ></page-homes> -->
+        </template>
+        <template if:true={showRealtors}>
+            <p>Showing Realtors</p>
+            <!-- <page-realtors
+                user={user}
+                user-realtor={userRealtor}
+            ></page-realtors> -->
+        </template>
+        <template if:true={showFinancing}>
+            <p>Showing Financing</p>
+            <!-- <page-financing
+                user={user}
+            ></page-financing> -->
+        </template>
+        <template if:true={showProfile}>
+            <p>Showing Profile</p>
+            <!-- <page-profile
+                user={user}
+                user-realtor={userRealtor}
+                favorite-homes={favoriteHomes}
+            ></page-profile> -->
+        </template>
+
+        <!-- Atop other sections: modal for user login -->
+        <p>Modal would be inserted...</p>
+        <!-- <util-modal show={signInPrompt}
+            my-label="User Login"
+            onbtn={handleCloseModal}
+        >
+            <br>
+            <util-content-box input round>
+                <div class="inputs">
+                    <util-input-box inline track-change
+                        my-name="Username:"
+                        my-value={promptUsername}
+                    ></util-input-box>
+                    <util-input-box inline track-change password
+                        my-name="Password:"
+                        my-value={promptPassword}
+                    ></util-input-box>
+                    <util-button-link
+                        my-label="Log in"
+                        event-key="login"
+                        onbtn={handleBtn}
+                    ></util-button-link>
+                </div>
+            </util-content-box>
+        </util-modal> -->
+    </main>
+</template>
