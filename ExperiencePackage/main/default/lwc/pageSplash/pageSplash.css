@@ -1,0 +1,21 @@
+:host {
+    flex: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.splash-image {
+    margin: auto 0 auto 2rem;
+}
+img {
+    min-width: 20rem;
+    max-width: 40vw;
+}
+c-util-content-box {
+    padding: 2rem;
+    min-width: 20rem;
+    max-width: 28rem;
+}
+c-util-button-link {
+    float: right;
+    margin-top: 1rem;
+}

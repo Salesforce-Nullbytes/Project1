@@ -1,0 +1,15 @@
+<template>
+    <c-main-header
+        signed-in={signedIn}
+        current-page={onPage}
+        onnav={handleNav}
+    ></c-main-header>
+    <c-main-content
+        current-page={onPage}
+        onsignin={handleSignIn}
+        sign-in-prompt={signInPrompt}
+        onbtn={handleBtn}
+        user-signed-in={signedIn}
+    ></c-main-content>
+    <c-main-footer></c-main-footer>
+</template>

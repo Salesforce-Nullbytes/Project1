@@ -1,0 +1,14 @@
+:root {
+    /* Brand colors */
+    --background: #EDEEBE;
+    --selectable: #5BAB93;
+    --highlight: #13FFB8;
+    --input: #CF9FF4;
+    --input-field: #feefff;
+    --favorite: #F7FF95;;
+    --blue: #CCE4FF;
+    /* Standard colors */
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #D2D3D3;
+}

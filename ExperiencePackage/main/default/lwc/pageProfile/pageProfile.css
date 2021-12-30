@@ -1,0 +1,31 @@
+:host {
+    flex: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.left-panel {
+    width: 25rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.left-panel c-util-card-holder {
+    flex: 100%;
+    margin: 1rem 2rem;
+}
+.right-panel {
+    flex: 100%;
+    display: flex;
+}
+.right-panel c-util-content-box {
+    flex: 100%;
+    padding: 3rem 2rem 3rem 0;
+}
+c-util-button-link {
+    float: right;
+    margin-top: 1rem;
+}
+img {
+    width: 17rem;
+    border: 0.5rem solid var(--black);
+    margin: 2rem 3rem 0.5rem 3rem;
+}

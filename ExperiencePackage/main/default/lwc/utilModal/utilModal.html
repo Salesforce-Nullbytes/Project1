@@ -1,0 +1,14 @@
+<template>
+    <div class={cssClass}>
+        <div class="contents">
+            <div class="heading">
+                <h1>{myLabel}</h1>
+                <c-util-button-link
+                    my-label="&times;"
+                    event-key="closemodal"
+                ></c-util-button-link>
+            </div>
+            <slot></slot>
+        </div>
+    </div>
+</template>

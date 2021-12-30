@@ -1,0 +1,10 @@
+<!-- set attribute "my-heading" for text at top. -->
+<!-- Pass info into slot to render beneath it. -->
+<template>
+    <div class={myClass}>
+        <h3>{myHeading}</h3>
+        <div class="flex">
+            <slot></slot>
+        </div>
+    </div>
+</template>

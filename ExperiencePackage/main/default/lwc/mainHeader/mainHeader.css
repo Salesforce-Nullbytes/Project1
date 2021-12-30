@@ -1,0 +1,29 @@
+:host {
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding: 1rem;
+    padding-bottom: 4px;
+}
+.main-header {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.nav {
+    margin: 4px;
+    line-height: 2rem;
+    display: flex;
+}
+.account {
+    align-self: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    line-height: 2rem;
+    margin: 4px;
+}
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 32px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}

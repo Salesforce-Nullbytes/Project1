@@ -1,0 +1,13 @@
+<!-- set boolean attribute "anchor" for <a> tag. Otherise, renders button -->
+<!-- must also pass "my-label" for text rendered... -->
+<!-- define 'event-key' to fire event with key as detail ("nav" or "btn" event)-->
+<!--   if key defined, set activeOn to same key for highlighting -->
+<template>
+    <button class={computeClass} onclick={triggerEvent}>{myLabel}</button>
+    <!-- <template if:false={anchor}>
+        <button class={computeClass} onclick={triggerEvent}>{myLabel}</button>
+    </template>
+    <template if:true={anchor}>
+        <a class={computeClass} onclick={triggerEvent}>{myLabel}</a>
+    </template> -->
+</template>

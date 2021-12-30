@@ -1,0 +1,11 @@
+span {
+    font-stretch: semi-condensed;
+}
+span[slot=title] {
+    font-weight: bold;
+}
+span[slot=text] {
+    font-family: monospace;
+    background-color: white;
+    font-size: 1rem;
+}

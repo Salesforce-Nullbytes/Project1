@@ -1,0 +1,25 @@
+<template>
+    <template if:true={userRealtor}>
+        <c-util-card-holder my-heading="Your Realtor" round>
+            <table>
+                <template for:each={realtorInfo} for:item="detail" for:index="index">
+                    <tr key={detail.key}>
+                        <td> <label for={detail.key}>{detail.key}</label> </td>
+                        <td>
+                            <input type="text" name={detail.key} value={detail.value} />
+                        </td>
+                    </tr>
+                </template>
+            </table>
+            <div class="realtorRight">
+                <table>
+                    <tr><td><c-util-button-link my-label="Message"></c-util-button-link></td></tr>
+                    <tr><td><c-util-button-link my-label="Drop"></c-util-button-link></td></tr>
+                </table>
+                <template if:true={userRealtor.image}>
+                    <img src={userRealtor.image.link} alt={userRealtor.image.alt} />
+                </template>
+            </div>
+        </c-util-card-holder>
+    </template>
+</template>

@@ -1,0 +1,27 @@
+/* @import 'cssLibrary/styles'; */
+div {
+    margin: 0;
+    border: 2px solid var(--black);
+    padding: 0.5rem 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+label {
+    white-space: nowrap;
+    margin-top: 0.3rem;
+    width: 6rem;
+}
+input {
+    background-color: var(--input-field);
+    width: 6rem;
+    padding: 0.5rem;
+    height: 0.5rem;
+}
+br {
+    display: block;
+    margin: 0.2rem;
+}

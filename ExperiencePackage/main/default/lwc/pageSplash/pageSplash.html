@@ -1,0 +1,31 @@
+<template>
+    <div class="splash-image">
+        <img src={splashImage} alt="HouseHog splash image" />
+    </div>
+    <template if:false={signup}>
+        <c-util-content-box my-heading="Welcome to HouseHog!">
+            <p> HouseHog is your one-stop shop for buying
+                a new home. You can seach for homes, find 
+                realtors, and secure financing all from one
+                easy-to-use interface.
+            </p>
+            <c-util-button-link my-label="Learn More!"></c-util-button-link>
+        </c-util-content-box>
+    </template>
+    <template if:true={signup}>
+        <c-util-content-box my-heading="Start your HouseHog account now!" input>
+            <br>
+            <template for:each={inputs} for:item="input" for:index="index">
+                <c-util-input-box key={input.name} data-index={index}
+                    my-name={input.name}
+                    my-value={input.value}
+                    track-change
+                    ontyping={handleFieldChange}
+                ></c-util-input-box>
+            </template>
+            <c-util-button-link my-label="Register"
+                onclick={handleRegisterClick}
+            ></c-util-button-link>
+        </c-util-content-box>
+    </template>
+</template>

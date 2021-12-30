@@ -1,0 +1,18 @@
+<template>
+    <template if:true={favoriteHomes}>
+        <c-util-card-holder my-heading="Favorited Homes" round>
+            <template for:each={favoriteHomes} for:item="home" for:index="index">
+                <c-util-card key={home.address1} 
+                    image={home.image}
+                    data-index={index}
+                >
+                    <span slot="title">
+                        {home.address1}<br>{home.address2}
+                    </span>
+                    <span slot="text">{home.price}</span>
+                    <span></span> <!-- Default slot... -->
+                </c-util-card>
+            </template>
+        </c-util-card-holder>
+    </template>
+</template>

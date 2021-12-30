@@ -1,0 +1,11 @@
+/* @import 'cssLibrary/styles'; */
+:host {
+    flex: 100%;
+    display: flex;
+    padding: 1rem;
+    position: relative;
+}
+c-util-modal c-util-content-box {
+    max-width: 25rem;
+    margin: auto;
+}
