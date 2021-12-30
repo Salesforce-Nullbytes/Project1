@@ -1,0 +1,34 @@
+/* @import 'cssLibrary/styles'; */
+:host {
+    display: flex;
+    flex: 100%;
+}
+h2 {
+    margin: 0;
+}
+.box {
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
+    padding: 1.5rem;
+    flex: 100%;
+}
+.round {
+    border-radius: 8px;
+}
+.input {
+    background-color: var(--input);
+}
+.thin {
+    padding: 0.2rem;
+}
+.thin form {
+    display: flex;
+    justify-content: space-evenly;
+}
+.thin h2 {
+    display: inline;
+    white-space: nowrap;
+    margin: 0.9rem 0.2rem 0;
+    font-size: 1.2rem;;
+}

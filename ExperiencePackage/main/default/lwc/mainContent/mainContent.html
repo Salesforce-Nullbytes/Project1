@@ -2,12 +2,11 @@
     <main>
         <!-- Only one component should show... -->
         <template if:true={showSplash}>
-            <p>Showing Splash</p>
-            <!-- <page-splash
+            <c-page-splash
                 onsignin={handleSignIn}
                 onregister={handleRegister}
                 signup={signUp}
-            ></page-splash> -->
+            ></c-page-splash>
         </template>
         <template if:true={showHomes}>
             <p>Showing Homes</p>

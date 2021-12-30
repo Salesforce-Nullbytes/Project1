@@ -1,0 +1,14 @@
+<!-- Set name/label as my-name, and my-value variable to parent -->
+<!-- boolean 'inline' prevents a trailing line break -->
+
+<template>
+    <div>
+        <label for={myName}>{myName}</label>
+        <input type={inputType}
+            name={myName}
+            value={myValue}
+            onchange={handleChange}
+        />
+    </div>
+    <template if:false={inline}><br></template>
+</template>
