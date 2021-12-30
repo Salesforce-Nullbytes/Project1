@@ -1,0 +1,56 @@
+<template>
+    <div class="left-panel">
+        <template if:false={user}>
+            <c-util-content-box my-heading="Hi, shopper!">
+                <br>
+                <p> Oh no! These features are for members only!</p>
+                <c-util-button-link my-label="Sign in!"></c-util-button-link>
+            </c-util-content-box>
+        </template>
+        <template if:true={user}>
+            <c-util-content-box my-heading={greeting}>
+                <br>
+                <template if:true={hasFinancingDetails}>
+                    <p> Update your personal details to get a more accurate quote:
+                    </p>
+                </template>
+                <template if:false={hasFinancingDetails}>
+                    <p> Complete some additional personal details to get an
+                        estimate on your mortgage payments:
+                    </p>
+                </template>
+                <!-- Personal details required for quote on mortgage -->
+                <c-util-content-box input>
+                    <template for:each={personalDetails} for:item="input" for:index="index">
+                        <c-util-input-box key={input.name} data-index={index}
+                            my-name={input.name}
+                            my-value={input.value}
+                            track-change
+                            ontyping={handleDetailsChange}
+                        ></c-util-input-box>
+                    </template>
+                </c-util-content-box>
+            </c-util-content-box>
+        </template>
+    </div>
+    <div class="right-panel">
+        <template if:true={user}>
+            <c-util-content-box my-heading="Mortgage Payment Calculator" input>
+                <br>
+                <!-- Mortgage calculator parameter inputs -->
+                <template for:each={inputs} for:item="input" for:index="index">
+                    <c-util-input-box key={input.name} data-index={index}
+                        my-name={input.name}
+                        my-value={input.value}
+                        track-change
+                        ontyping={handleFieldChange}
+                    ></c-util-input-box>
+                </template>
+                <!-- Calculation button -->
+                <c-util-button-link my-label="CALCULATE"
+                    onclick={handleCalculateClick}
+                ></c-util-button-link>
+            </c-util-content-box>
+        </template>
+    </div>
+</template>

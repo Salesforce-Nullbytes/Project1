@@ -1,0 +1,27 @@
+<template>
+    <div class="left-panel">
+        <img src={profilePic} alt="Profile photo" />
+        <c-util-card-holder my-heading="About you:" round>
+            <table>
+                <template for:each={details} for:item="detail" for:index="index">
+                    <tr key={detail.key}>
+                        <td> <label for={detail.key}>{detail.key}</label> </td>
+                        <td>
+                            <input type="text" name={detail.key} value={detail.value} />
+                        </td>
+                    </tr>
+                </template>
+            </table>
+        </c-util-card-holder>
+    </div>
+    <div class="right-panel">
+        <c-util-content-box my-heading={greeting}>
+            <br>
+            <!-- User's selected realtor... -->
+            <c-user-realtor user-realtor={userRealtor}></c-user-realtor>
+            <br>
+            <!-- User's favorited homes... -->
+            <c-user-homes favorite-homes={favoriteHomes}></c-user-homes>
+        </c-util-content-box>
+    </div>
+</template>

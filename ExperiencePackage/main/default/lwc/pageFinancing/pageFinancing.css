@@ -1,0 +1,25 @@
+:host {
+    flex: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.left-panel c-util-content-box {
+    padding: 1rem;
+    min-width: 27rem;
+    max-width: 35rem;
+}
+.right-panel {
+    flex:100%;
+}
+.right-panel c-util-content-box {
+    margin: 1rem auto 0;
+    padding: 0;
+    min-width: 20rem;
+    max-width: 28rem;
+}
+c-util-button-link {
+    float: right;
+    margin-top: 1rem;
+}

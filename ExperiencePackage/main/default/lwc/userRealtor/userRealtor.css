@@ -1,0 +1,20 @@
+.realtorRight {
+    margin-left: auto;
+    margin-right: 1.5rem;
+    display: flex;
+}
+.realtorRight c-util-button-link{
+    margin: 0 0.1rem;
+}
+img{
+    width: 5rem;
+    height: auto;
+    border: 0.1rem solid var(--black);
+    margin: auto;
+}
+table {
+    margin-left: 1.5rem;
+}
+td {
+    font-size: 0.9em;;
+}
