@@ -1,5 +1,26 @@
 <template>
-<h3>hello</h3>
+    <div class="body">
+        <h3>New Student Sign Up</h3>
+
+        <div class="column">
+            <label for="studentName">Student Name:</label><br/>
+            <input type="text" class="studentName"></div>
+
+        <div class="column">
+            <label for="parentName"> Parent Name:</label><br/>
+            <input type="text" class="parentName">
+        </div>
+
+        <div class="column">
+            <label for="parentEmail">Email:</label><br/>
+            <input type="text" class="parentEmail">
+        </div>
+
+        <div class="centerButton">
+            <input class="button" type="submit" value="Submit" onclick={handleStudentSubmit}>
+        </div>
+
+    </div>
 </template>
 
 
