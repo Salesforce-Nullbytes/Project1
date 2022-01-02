@@ -6,4 +6,6 @@ export default class UtilCard extends LightningElement {
     // OBJECT => {link:"...",alt="..."}
     @api
     image;
+    @api
+    status;
 }

@@ -22,6 +22,7 @@ c-util-card span {
 }
 c-util-card span[slot=title] {
     font-weight: bold;
+    font-size: 0.8rem;
 }
 c-util-card span[slot=text] {
     font-family: monospace;

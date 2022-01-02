@@ -59,6 +59,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ExperienceController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ForgotPasswordController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -361,6 +365,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Property__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Property__c.List_Price__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

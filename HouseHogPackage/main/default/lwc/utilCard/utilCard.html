@@ -1,8 +1,14 @@
 <template>
     <div class="card">
-        <template if:true={image}>
-            <img src={image.link} alt={image.alt} />
-        </template>
+        <div class="leftCard">
+            <template if:true={image}>
+                <img src={image.link} alt={image.alt} />
+                <br>
+            </template>
+            <template if:true={status}>
+                {status}
+            </template>
+        </div>
         <div class="slot">
             <slot name="title"></slot>
             <br>

@@ -15,8 +15,8 @@
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : { },
-          "componentName" : "c:app",
-          "id" : "10b38f31-8d8c-4aed-9ed6-79b62804f800",
+          "componentName" : "c:mainContent",
+          "id" : "88e44409-5e20-42e7-bb0c-2bddbf91fb6a",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"

@@ -8,11 +8,9 @@
         ></c-page-splash>
     </template>
     <template if:true={showHomes}>
-        <p>Showing Homes! Am I signed in? {testMsg}</p>
-        <!-- <page-homes
-            user={user}
-            favorite-homes={favoriteHomes}
-        ></page-homes> -->
+        <c-page-homes
+            signed-in={signedIn}
+        ></c-page-homes>
     </template>
     <template if:true={showRealtors}>
         <p>Showing Realtors</p>

@@ -1,7 +1,12 @@
 import { LightningElement, api } from 'lwc';
+import defaultHome from '@salesforce/resourceUrl/defaultHome';
 
 export default class UserHomes extends LightningElement {
-    // User always signed in on profile page
     @api
-    favoriteHomes;
+    prospectList;
+
+    defaultImage = {
+        link: defaultHome,
+        alt: "default home image"
+    };
 }
