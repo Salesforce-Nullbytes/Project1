@@ -29,7 +29,7 @@ export default class UtilButtonLink extends LightningElement {
         return this.dispatchEvent(new CustomEvent(eventName, {
             detail: this.eventKey,
             bubbles: true,
-            composed: true // Must bubble all the way up
+            //composed: true // Must bubble all the way up
         }));
     }
 }

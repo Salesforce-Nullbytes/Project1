@@ -1,19 +1,31 @@
 <template>
-    <div class="main-header">
+    <div class="main-header" onnav={handleNavigation}>
         <h1>HouseHog</h1>
         <!-- Main navigation links -->
         <div class="nav">
-            <template for:each={navLinks} for:item="link">
-                <c-util-button-link key={link.label}
-                    my-label={link.label}
-                    event-key={link.page}
-                    active-on={currentPage}
-                    anchor
-                ></c-util-button-link>
+            <template if:false={showReturnToHome}>
+                <template for:each={navLinks} for:item="link">
+                    <c-util-button-link key={link.label}
+                        my-label={link.label}
+                        event-key={link.page}
+                        active-on={currentPage}
+                        anchor
+                    ></c-util-button-link>
+                </template>
+            </template>
+            <template if:true={showReturnToHome}>
+                <template for:each={returnHomeLinks} for:item="link">
+                    <c-util-button-link key={link.label}
+                        my-label={link.label}
+                        event-key={link.page}
+                        active-on={currentPage}
+                        anchor
+                    ></c-util-button-link>
+                </template>
             </template>
         </div>
     </div>
-    <div class="account">
+    <div class="account" onnav={handleNavigation}>
         <!-- Displays differently when user is signed in -->
         <template if:true={signedIn}>
             <template for:each={signedInLinks} for:item="link">

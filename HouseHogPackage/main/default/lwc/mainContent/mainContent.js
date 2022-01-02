@@ -1,10 +1,58 @@
-import { LightningElement, track, api } from 'lwc';
+import { LightningElement, track, api, wire } from 'lwc';
+import GetUser from "@salesforce/apex/ExperienceController.GetUser";
+import siteChannel from '@salesforce/messageChannel/siteChannel__c';
+import {subscribe, publish, MessageContext} from 'lightning/messageService';
 
 // NOTE: importing allUsers for Demo purposes only (no back end available).
 // import { allHomes, allRealtors, allUsers } from 'data/javascript';
 
 export default class MainContent extends LightningElement {
+    // Core display variables
     signedIn = false;
+    currentPage = "splash";
+
+    // // Cookie method for navigation
+    // // LMS clears all values when refreshing/switching pages
+    // setPage(to) {
+    //     if (!to) { to = "splash"; }; // Default to splash page
+    //     this.currentPage = to;
+    // }
+    // renderedCallback() {
+    //     this.setPage(this.getCookie('page'));
+    // }
+
+    // Core data
+    @wire(GetUser)
+    currentUser;
+    get uName() {
+        //if (!this.currentUser) { return "No name"; }
+        return this.currentUser.data.Name;
+    }
+    get uContactId() {
+        return this.currentUser.data.ContactId;
+    }
+    get uAccountId() {
+        return this.currentUser.data.AccountId;
+    }
+    get uEmail() {
+        return this.currentUser.data.Email;
+    }
+
+    // Lightning Message Service Controller
+    @wire(MessageContext)
+    context;
+    connectedCallback() {
+        this.subscription = subscribe(this.context, siteChannel, (message) => {
+            console.log("In connected callback!");
+            this.messagePosted(message);
+        });
+    }
+    messagePosted(message) {
+        this.signedIn = message.signedIn;
+        this.currentPage = message.currentPage;
+        console.log("Saving message: " + this.signedIn + ", " + this.currentPage);
+    }
+
     promptUsername = "hoghouse";
     promptPassword = "pigpen";
 
@@ -12,10 +60,9 @@ export default class MainContent extends LightningElement {
     // @track
     // usersFull = [...allUsers];
 
-    @api
-    currentPage = "splash"; // default
-    @api
-    signInPrompt;
+    // REPLACED BY NEW PAGE IN LWR
+    //@api
+    //signInPrompt;
     @api
     get userSignedIn() {
         return this.signedIn;
@@ -52,11 +99,12 @@ export default class MainContent extends LightningElement {
 
     // Splash and signup subpage
     get showSplash() {
-        return this.currentPage === "splash" || this.signUp;
+        //return this.currentPage === "splash" || this.signUp;
+        return this.currentPage === "splash";
     }
-    get signUp() {
-        return this.currentPage === "signup";
-    }
+    // get signUp() {
+    //     return this.currentPage === "signup";
+    // }
 
     // // For the modal to appear on top of page...
     handleCloseModal() {
@@ -96,5 +144,23 @@ export default class MainContent extends LightningElement {
     //             return;
     //         }
     //     }
+    // }
+
+    // // From w3schools
+    // // Using cookies to track the page... LMS clears when changing pages (e.g. community login)
+    // getCookie(cookieKey) {
+    //     let name = cookieKey + "=";
+    //     let decodedCookie = decodeURIComponent(document.cookie);
+    //     let cookieContents = decodedCookie.split(';');
+    //     for(let i = 0; i <cookieContents.length; i++) {
+    //       let cookie = cookieContents[i];
+    //       while (cookie.charAt(0) == ' ') {
+    //         cookie = cookie.substring(1);
+    //       }
+    //       if (cookie.indexOf(name) == 0) {
+    //         return cookie.substring(name.length, cookie.length);
+    //       }
+    //     }
+    //     return "";
     // }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>siteChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>To coordinate navigation between header and main.</description>
+    <lightningMessageFields>
+        <fieldName>currentPage</fieldName>
+        <description>Which page should display, if on the SPA?</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>signedIn</fieldName>
+        <description>Is the user currently signed in?</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
