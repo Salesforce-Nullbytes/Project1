@@ -5,20 +5,7 @@
             "package": "HouseHogPackage",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "ExperiencePackage",
-            "package": "ExperiencePackage",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "default": true,
-            "dependencies": [
-                {
-                    "package": "HouseHogPackage",
-                    "versionNumber": "0.1.0.LATEST"
-                }
-            ]
+            "default": true
         }
     ],
     "name": "HouseHog",
