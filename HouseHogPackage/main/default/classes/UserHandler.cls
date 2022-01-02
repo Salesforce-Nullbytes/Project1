@@ -8,13 +8,23 @@ public class UserHandler {
     }
 
     // BEFORE_INSERT
+    public static void AddDefaultRole(List<User> insertedUsers) {
+        ID defaultRoleID = [SELECT id FROM UserRole WHERE name = 'Default' LIMIT 1].id;
+        for (User newUser : insertedUsers) {
+            newUser.UserRoleId = defaultRoleID;
+        }
+    }
+
+    // BEFORE_INSERT
     // BEFORE_UPDATE
     // Ensure that all entity names refer to valid Agencies or Banks
     public static void UpdateProfile(List<User> userList) {
-        Map<String, ID> pNameToId = ProfileIdMap(new Set<String>{'Realtor', 'Banker'});
+        Map<String, ID> pNameToId = ProfileIdMap(new Set<String>{'Realtor', 'Banker', 'Community'});
 
         for (User u : userList) {
             String type = GetUserType(u);
+            if (type == 'Standard' || type == null) { continue; }
+
             ID expectedProfile = pNameToId.get(type);
             if (u.ProfileId != expectedProfile) {
                 u.ProfileId = expectedProfile;
@@ -34,7 +44,6 @@ public class UserHandler {
     // BEFORE_UPDATE
     // Ensure that all entity names refer to valid Agencies or Banks
     public static void ValidateEntityNames(List<User> insertedUsers) {
-        
         Map<String, Set<String>> entityMapByType = UserTypeToEntityNames(insertedUsers);
 
         // Filter to existing agency or bank names, and map to ID
@@ -84,7 +93,7 @@ public class UserHandler {
     // AFTER_UPDATE
     // If entity affiliation changed, then remove from old group and add to new group
     public static void UpdateEntityGroups(Map<ID, User> newMap, Map<ID, User> oldMap) {
-
+        System.debug('In UpdateEntityGroups');
         // Mixed operation on GroupMember -- Can't perform UPDATE (only INSERT and DELETE)
         List<User> newMemberUsers = new List<User>();
         List<User> removeMemberUsers = new List<User>();

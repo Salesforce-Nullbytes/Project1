@@ -27,6 +27,11 @@
                 <default>false</default>
                 <label>Realtor</label>
             </value>
+            <value>
+                <fullName>Community</fullName>
+                <default>false</default>
+                <label>Community</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
