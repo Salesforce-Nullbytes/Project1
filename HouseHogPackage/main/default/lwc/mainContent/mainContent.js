@@ -1,31 +1,31 @@
 import { LightningElement, track, api, wire } from 'lwc';
 import GetUser from "@salesforce/apex/ExperienceController.GetUser";
+import UserId from "@salesforce/apex/ExperienceController.UserId";
 import siteChannel from '@salesforce/messageChannel/siteChannel__c';
-import {subscribe, publish, MessageContext} from 'lightning/messageService';
+import {subscribe, MessageContext} from 'lightning/messageService';
 
 // NOTE: importing allUsers for Demo purposes only (no back end available).
 // import { allHomes, allRealtors, allUsers } from 'data/javascript';
 
 export default class MainContent extends LightningElement {
-    // Core display variables
-    signedIn = false;
+    // CORE VARIABLES
     currentPage = "splash";
+    signedIn = false;
 
-    // // Cookie method for navigation
-    // // LMS clears all values when refreshing/switching pages
-    // setPage(to) {
-    //     if (!to) { to = "splash"; }; // Default to splash page
-    //     this.currentPage = to;
-    // }
-    // renderedCallback() {
-    //     this.setPage(this.getCookie('page'));
-    // }
+    get testMsg() {
+        return this.signedIn ? "Signed In" : "Not Signed In";
+    }
+
+    @wire(UserId)
+    ValidateSignIn({ error, data }) {
+        if (data) { this.signedIn = true; }
+        else if (error) { this.signedIn = false; }
+    }
 
     // Core data
     @wire(GetUser)
     currentUser;
     get uName() {
-        //if (!this.currentUser) { return "No name"; }
         return this.currentUser.data.Name;
     }
     get uContactId() {
@@ -43,14 +43,11 @@ export default class MainContent extends LightningElement {
     context;
     connectedCallback() {
         this.subscription = subscribe(this.context, siteChannel, (message) => {
-            console.log("In connected callback!");
             this.messagePosted(message);
         });
     }
     messagePosted(message) {
-        this.signedIn = message.signedIn;
         this.currentPage = message.currentPage;
-        console.log("Saving message: " + this.signedIn + ", " + this.currentPage);
     }
 
     promptUsername = "hoghouse";

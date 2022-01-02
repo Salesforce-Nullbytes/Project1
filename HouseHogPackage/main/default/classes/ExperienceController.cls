@@ -10,6 +10,11 @@ public with sharing class ExperienceController {
         return u;
     }
 
+    @AuraEnabled(cacheable=true)
+    public static ID UserId() {
+        return UserInfo.getUserId();
+    }
+
     // @AuraEnabled
     // public static Account GetAccountWithName(string name) {
     //     string filter = '%' + name + '%';

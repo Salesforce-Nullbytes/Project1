@@ -1,13 +1,17 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, wire } from 'lwc';
+import UserId from "@salesforce/apex/ExperienceController.UserId";
 import siteChannel from '@salesforce/messageChannel/siteChannel__c';
 import {subscribe, publish, MessageContext} from 'lightning/messageService';
 
 export default class MainHeader extends LightningElement {
     // CORE VARIABLES
-    signedIn = false;
     currentPage = "splash";
-    get showReturnToHome() {
-        return (!this.isMainPage(this.currentPage));
+    signedIn = false;;
+
+    @wire(UserId)
+    ValidateSignIn({ error, data }) {
+        if (data) { this.signedIn = true; }
+        else if (error) { this.signedIn = false; }
     }
 
     // Lightning Message Service Controller
@@ -19,7 +23,6 @@ export default class MainHeader extends LightningElement {
         });
 
         // Update page from cookie, if it exists
-        console.log("HEADER connected callback");
         let cookiePage = this.getCookie("page");
         if (this.isMainPage(cookiePage)) {
             cookiePage = ""; // Defaults to splash page
@@ -27,20 +30,16 @@ export default class MainHeader extends LightningElement {
         this.setPage(cookiePage);
     }
     messagePosted(message) {
-        this.signedIn = message.signedIn;
-        //this.mainSection = message.mainSection;
         this.currentPage = message.currentPage;
     }
     postPage() {
         const data = { currentPage: this.currentPage };
         publish(this.context, siteChannel, data);
-        console.log('HEADER Page posted to ' + this.currentPage);
     }
 
     // Cookie method for navigation
     // LMS clears all values when refreshing/switching pages
     setPage(to) {
-        console.log("HEADER setting page TO: " + to + " FROM " + this.currentPage);
         if (!to) { to = "splash"; }; // Default to splash page
 
         this.setCookie("page", to);
@@ -57,6 +56,9 @@ export default class MainHeader extends LightningElement {
         { label:"Realtors", page: "realtors"},
         { label:"Financing", page: "financing"},
     ];
+    returnHomeLinks = [
+        { label:"Return to Main Page", page: "splash"},
+    ];
     signedOutLinks = [
         { label:"Sign In", page: "signin", logs: "in"},
         { label:"Sign Up", page: "signup"},
@@ -64,9 +66,6 @@ export default class MainHeader extends LightningElement {
     signedInLinks = [
         { label:"Profile", page: "profile"},
         { label:"Sign Out", page: "signout", logs: "out"},
-    ];
-    returnHomeLinks = [
-        { label:"Return to Main Page", page: "splash"},
     ];
 
     // On clicking a navigation item
@@ -89,17 +88,14 @@ export default class MainHeader extends LightningElement {
     openTarget(toMain) {
         if (toMain) {
             window.open("../", "_self");
-            console.log("NAV TO HOME");
             return;
         }
         if (this.currentPage == "signin") {
             window.open("login", "_self");
-            console.log("NAV TO SIGNIN");
             return;
         }
         if (this.currentPage == "signup") {
             window.open("SelfRegister", "_self");
-            console.log("NAV TO SIGNUP");
             return;
         }
     }
@@ -114,16 +110,18 @@ export default class MainHeader extends LightningElement {
         }
         return result;
     }
+    // Lets site know to display the 'Return to Main Page' button
+    get showReturnToHome() {
+        return (!this.isMainPage(this.currentPage));
+    }
 
     // From w3schools
     // Using cookies to track the page... LMS clears when changing pages (e.g. community login)
     getCookie(cookieKey) {
         let name = cookieKey + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
-
-        console.log(decodedCookie);
-
         let cookieContents = decodedCookie.split(';');
+
         for(let i = 0; i <cookieContents.length; i++) {
           let cookie = cookieContents[i];
           while (cookie.charAt(0) == ' ') {
@@ -136,7 +134,6 @@ export default class MainHeader extends LightningElement {
         return "";
     }
     setCookie(cookieKey, toValue) {
-        console.log("HEADER Setting cookie " + cookieKey + " TO " + toValue);
         const d = new Date();
         let expirationDays = 0;
         let expirationHours = 4;

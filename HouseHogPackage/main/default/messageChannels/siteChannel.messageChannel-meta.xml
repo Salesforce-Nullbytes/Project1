@@ -7,8 +7,4 @@
         <fieldName>currentPage</fieldName>
         <description>Which page should display, if on the SPA?</description>
     </lightningMessageFields>
-    <lightningMessageFields>
-        <fieldName>signedIn</fieldName>
-        <description>Is the user currently signed in?</description>
-    </lightningMessageFields>
 </LightningMessageChannel>
