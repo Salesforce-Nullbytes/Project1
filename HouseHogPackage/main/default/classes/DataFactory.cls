@@ -1,5 +1,5 @@
 public class DataFactory {
-    public static void CreateAll() {
+    public static void CreateAgency() {
         Agency__c agency1 = new Agency__c(name = 'Realty Agency 1');
         agency1.Phone_Number__c = '456 777-2323';
         agency1.Email_Address__c = 'realtyagency1@fakemaildomain.com';
@@ -8,11 +8,21 @@ public class DataFactory {
         agency1.State__c = 'VA';
         agency1.Zip_Code__c = '13345';
         Insert agency1;
-
+    }
+    public static void CreateInternalUsers() {
         User[] internalUsers = new User[]{};
-        User realtor1 = MakeUser('Realtor', 1, agency1.name);
-        User realtor2 = MakeUser('Realtor', 2, agency1.name);
+        User realtor1 = MakeUser('Realtor', 1, 'Realty Agency 1');
+        internalUsers.add(realtor1);
+        User realtor2 = MakeUser('Realtor', 2, 'Realty Agency 1');
+        internalUsers.add(realtor2);
         Insert internalUsers;
+    }
+    public static void CreateAll() {
+        Realtor__c[] realtors = [SELECT id FROM Realtor__c];
+        if (realtors.size() < 2) {
+            System.debug('Must have at least 2 realtor objects!');
+            return;
+        }
 
         Account[] newAccounts = new List<Account>();
         for (Integer i = 1; i <= 10; i++) {
@@ -22,9 +32,9 @@ public class DataFactory {
             a.Primary_Email__c = 'account' + i + '@fakemail.com';
 
             if (Math.mod(i,2) == 1) {
-                a.Realtor__c = realtor1.id;
+                a.Realtor__c = realtors[0].id;
             } else {
-                a.Realtor__c = realtor2.id;
+                a.Realtor__c = realtors[1].id;
             }
 
             newAccounts.add(a);
@@ -39,6 +49,7 @@ public class DataFactory {
             c.AccountId = newAccounts[i].id;
             c.phone = newAccounts[i].Primary_Phone_Number__c;
             c.email = c.lastName + newAccounts[i].Primary_Email__c;
+            newContacts.add(c);
         }
         Insert newContacts;
 
@@ -91,18 +102,18 @@ public class DataFactory {
     public static User MakeUser(String type, Integer baseNum , String entity) {
         User newUser = new User();
         newUser.User_Category__c = type;
-        newUser.Alias = type + baseNum;
-        newUser.CommunityNickname = newUser.Alias;
-        newUser.email = newUser.Alias + '@fakemail.com';
+        newUser.Alias = 'user' + baseNum;
+        newUser.CommunityNickname = type + newUser.Alias;
+        newUser.email = newUser.CommunityNickname + '@fakemail.com';
         newUser.phone = '111-222-4443';
         newUser.EmailEncodingKey = 'UTF-8';
         newUser.LanguageLocaleKey = 'en_US';
         newUser.LocaleSidKey = 'en_US';
         newUser.TimeZoneSidKey = 'America/Los_Angeles';
-        newUser.Username = newUser.Alias + Math.random() * 100000 + '@fakemaildomain' + Math.random() * 100000 + '.com';
+        newUser.Username = newUser.CommunityNickname + Math.random() * 100000 + '@fakemaildomain' + Math.random() * 100000 + '.com';
         newUser.firstName = type;
         newUser.lastName = 'User' + baseNum;
-        newUser.Entity_Affiliation__c = 'entity';
+        newUser.Entity_Affiliation__c = entity;
 
         return newUser;
     }

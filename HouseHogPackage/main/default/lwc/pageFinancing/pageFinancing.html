@@ -1,7 +1,7 @@
 <template>
     <div class="left-panel">
         <template if:false={signedIn}>
-            <c-util-content-box my-heading="Hi, shopper!">
+            <c-util-content-box my-heading="Hi, house hunter!">
                 <br>
                 <p> Oh no! These features are for members only.</p>
                 <p> Please sign in or register a new account.</p>
@@ -29,6 +29,10 @@
                             ontyping={handleDetailsChange}
                         ></c-util-input-box>
                     </template>
+                    <c-util-button-link my-label="UPDATE"
+                        event-key="update"
+                        onbtn={handleUpdateClick}
+                    ></c-util-button-link>
                 </c-util-content-box>
             </c-util-content-box>
         </template>
@@ -48,7 +52,8 @@
                 </template>
                 <!-- Calculation button -->
                 <c-util-button-link my-label="CALCULATE"
-                    onclick={handleCalculateClick}
+                    event-key="calculate"
+                    onbtn={handleCalculateClick}
                 ></c-util-button-link>
             </c-util-content-box>
         </template>

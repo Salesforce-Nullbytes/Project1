@@ -3,18 +3,17 @@ import UserId from "@salesforce/apex/ExperienceController.UserId";
 import siteChannel from '@salesforce/messageChannel/siteChannel__c';
 import {subscribe, publish, MessageContext} from 'lightning/messageService';
 import getLogoutUrl from '@salesforce/apex/applauncher.IdentityHeaderController.getLogoutUrl';
-import isGuest from "@salesforce/user/isGuest";
 
 export default class MainHeader extends LightningElement {
     // CORE VARIABLES
     currentPage = "splash";
-    signedIn = !isGuest;
+    signedIn = false;
 
-    // @wire(UserId)
-    // ValidateSignIn({ error, data }) {
-    //     if (data) { this.signedIn = true; }
-    //     else if (error) { this.signedIn = false; }
-    // }
+    @wire(UserId)
+    ValidateSignIn({ error, data }) {
+        if (data) { this.signedIn = true; }
+        else if (error) { this.signedIn = false; }
+    }
 
     // Lightning Message Service Controller
     @wire(MessageContext)
