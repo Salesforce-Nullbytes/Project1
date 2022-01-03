@@ -3,6 +3,7 @@
     <fullName>QKids_Teachers</fullName>
     <columns>NAME</columns>
     <columns>Teacher_Email__c</columns>
+    <columns>Status__c</columns>
     <filterScope>Mine</filterScope>
     <label>QKids Teachers</label>
 </ListView>

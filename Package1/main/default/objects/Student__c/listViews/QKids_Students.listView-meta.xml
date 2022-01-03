@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QKids_Students</fullName>
+    <columns>NAME</columns>
+    <columns>Parent_Name__c</columns>
+    <columns>Parent_Email__c</columns>
+    <columns>Student_Level__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>QKids Students</label>
+</ListView>
