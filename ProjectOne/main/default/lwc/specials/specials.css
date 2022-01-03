@@ -1,0 +1,19 @@
+h3,
+h2 {
+    text-align: center;
+    color: yellow;
+    background-color: darkviolet;
+}
+h1 {
+    text-align: center;
+}
+img {
+    width: 300px;
+    height: 150px;
+    margin-left: 40%;
+}
+
+.card {
+    background-color: darkviolet;
+    border: solid 1px black;
+}

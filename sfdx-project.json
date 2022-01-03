@@ -1,0 +1,19 @@
+{
+    "packageDirectories": [
+        {
+            "path": "ProjectOne",
+            "package": "ProjectOne",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": true
+        }
+    ],
+    "name": "ProjectOne",
+    "namespace": "",
+    "sfdcLoginUrl": "https://wise-shark-gzz4t8-dev-ed.my.salesforce.com/",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "ProjectOne": "0Ho5f000000XZkoCAG",
+        "ProjectOne@0.1.0-1": "04t5f000000a9xbAAA"
+    }
+}

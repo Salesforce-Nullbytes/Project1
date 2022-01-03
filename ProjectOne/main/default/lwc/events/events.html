@@ -1,0 +1,30 @@
+<template>
+    <button class="slds-button" onclick={hide}>Hide</button>
+    <template if:true={show}>
+        <h1>Coming Events!</h1>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12">
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <img
+                            src={JimmyH}
+                            alt="Jimmy Hendricks"
+                            srcset=""
+                        />
+                    </div>
+                </article>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <article class="slds-card">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <img
+                            src={PinkFloyd}
+                            alt="Pink Floyd"
+                            srcset=""
+                        />
+                    </div>
+                </article>
+            </div>
+        </div>
+    </template>
+</template>

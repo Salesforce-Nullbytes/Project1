@@ -1,0 +1,40 @@
+<template>
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">Select your Toppings!</legend>
+        <div class="slds-form-element__control">
+          <div class="slds-checkbox_button-group">
+            <span class="slds-button slds-checkbox_button">
+              <input type="checkbox" id="unique-id-peporoni" value="Pepperoni" name="peporoni" />
+              <label class="slds-checkbox_button__label" for="unique-id-peporoni">
+                <span class="slds-checkbox_faux">Peporoni</span>
+              </label>
+            </span>
+            <span class="slds-button slds-checkbox_button">
+              <input type="checkbox" id="unique-id-saussage" value="Saussage" name="saussage" />
+              <label class="slds-checkbox_button__label" for="unique-id-saussage">
+                <span class="slds-checkbox_faux">Saussage</span>
+              </label>
+            </span>
+            <span class="slds-button slds-checkbox_button">
+              <input type="checkbox" id="unique-id-mushroom" value="Mushroom" name="mushroom" />
+              <label class="slds-checkbox_button__label" for="unique-id-mushroom">
+                <span class="slds-checkbox_faux">Mushroom</span>
+              </label>
+            </span>
+            <span class="slds-button slds-checkbox_button">
+              <input type="checkbox" id="unique-id-green-pepper" value="GreenPepper" name="greenPepper" />
+              <label class="slds-checkbox_button__label" for="unique-id-green-pepper">
+                <span class="slds-checkbox_faux">Green Pepper</span>
+              </label>
+            </span>
+            <span class="slds-button slds-checkbox_button">
+              <input type="checkbox" id="unique-id-olive" value="Olive" name="olive" />
+              <label class="slds-checkbox_button__label" for="unique-id-olive">
+                <span class="slds-checkbox_faux">Olive</span>
+              </label>
+            </span>
+          </div>
+        </div>
+      </fieldset>
+    <button class="slds-button" onclick={Order}>Order now!</button>
+</template>

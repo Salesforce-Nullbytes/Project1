@@ -1,0 +1,42 @@
+<template>
+    <button class="slds-button" onclick={hide}>Hide</button>
+    <template if:true={show}>
+        <h1>Combos and Coupons!</h1>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-3">
+                <div class="card">
+                    <article class="slds-card">
+                        <div class="slds-card__body slds-card__body_inner">
+                            <h3>Large 3 Topping</h3>
+                            <img
+                                src={LargePizza}
+                                alt="Combo pizza"
+                                srcset=""
+                            />
+                        </div>
+                        <footer class="slds-card__footer">
+                            <h3>$20.00</h3>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="card">
+                    <article class="slds-card">
+                        <div class="slds-card__body slds-card__body_inner">
+                            <h3>2 medium 1 Topping</h3>
+                            <img
+                                src={TwoPizzas}
+                                alt="two medium pizzas"
+                                srcset=""
+                            />
+                        </div>
+                        <footer class="slds-card__footer">
+                            <h3>$15.00</h3>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>
