@@ -1,4 +1,37 @@
 public class DataFactory {
+    public static void UpdatePricebook() {
+        Pricebook2 pb = [SELECT id, name FROM Pricebook2 WHERE name = 'Standard Price Book' LIMIT 1];
+        pb.isActive = true;
+        Update pb;
+
+        Product2 comListing = new Product2();
+        comListing.name = 'Commercial Listing';
+        comListing.ProductCode = 'COMLI1';
+        comListing.IsActive = true;
+
+        Product2 conListing = new Product2();
+        conListing.name = 'Personal Listing';
+        conListing.ProductCode = 'CONLI1';
+        conListing.IsActive = true;
+
+        Insert comListing;
+        Insert conListing;
+
+        PricebookEntry comEntry = new PricebookEntry();
+        comEntry.isActive = true;
+        comEntry.Pricebook2Id = pb.id;
+        comEntry.Product2Id = comListing.id;
+        comEntry.UnitPrice = 100;
+
+        PricebookEntry conEntry = new PricebookEntry();
+        conEntry.isActive = true;
+        conEntry.Pricebook2Id = pb.id;
+        conEntry.Product2Id = conListing.id;
+        conEntry.UnitPrice = 25;
+
+        Insert comEntry;
+        Insert conEntry;
+    }
     public static void CreateAgency() {
         Agency__c agency1 = new Agency__c(name = 'Realty Agency 1');
         agency1.Phone_Number__c = '456 777-2323';

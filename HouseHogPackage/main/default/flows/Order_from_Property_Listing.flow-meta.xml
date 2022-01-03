@@ -291,6 +291,7 @@
         <connector>
             <targetReference>Get_Pricebook</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Status__c</field>

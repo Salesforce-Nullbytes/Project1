@@ -7,6 +7,6 @@
     <columns>Purchasing_Realtor__c</columns>
     <columns>Property__c</columns>
     <columns>Account__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Prospect Details</label>
 </ListView>
