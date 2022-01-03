@@ -79,13 +79,6 @@
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
-        }, {
-          "componentAttributes" : { },
-          "componentName" : "c:freeTrialLesson",
-          "id" : "70a9865e-1e8f-4ce6-83b3-9943e81b131e",
-          "renderPriority" : "NEUTRAL",
-          "renditionMap" : { },
-          "type" : "component"
         } ],
         "id" : "1c026755-93b3-4163-b524-ef13e3fa78d3",
         "regionLabel" : "Column 1",
