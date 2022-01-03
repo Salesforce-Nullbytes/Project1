@@ -6,6 +6,7 @@ package.xml
 
 **/appMenus
 **/groups
+**/networks
 
 # LWC configuration files
 **/jsconfig.json

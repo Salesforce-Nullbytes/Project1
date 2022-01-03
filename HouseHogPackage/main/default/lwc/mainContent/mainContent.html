@@ -21,10 +21,9 @@
         ></page-realtors> -->
     </template>
     <template if:true={showFinancing}>
-        <p>Showing Financing</p>
-        <!-- <page-financing
-            user={user}
-        ></page-financing> -->
+        <c-page-financing
+            signed-in={signedIn}
+        ></c-page-financing>
     </template>
     <template if:true={showProfile}>
         <p>Showing Profile</p>

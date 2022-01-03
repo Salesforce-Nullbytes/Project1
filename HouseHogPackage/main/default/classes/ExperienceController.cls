@@ -11,6 +11,16 @@ public without sharing class ExperienceController {
     }
 
     @AuraEnabled(cacheable=true)
+    public static Account GetUserFinancial() {
+        id userId = UserInfo.getUserId();
+        User u = [select id, contactId, accountId from User where id = :userId];
+        id getAccountId = u.accountId;
+
+        Account a = [SELECT id, name FROM Account WHERE id = :getAccountId];
+        return a;
+    }
+
+    @AuraEnabled(cacheable=true)
     public static ID UserId() {
         return UserInfo.getUserId();
     }

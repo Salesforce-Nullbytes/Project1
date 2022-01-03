@@ -1,9 +1,14 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import GetUserFinancial from "@salesforce/apex/ExperienceController.GetUserFinancial";
 
 export default class PageFinancing extends LightningElement {
     // User must be signed in to access financing features
     @api
-    user;
+    signedIn;
+
+    // Core data
+    @wire(GetUserFinancial)
+    currentUser;
 
     // Input fields for signup page, if needed.
     inputs = [
@@ -50,20 +55,26 @@ export default class PageFinancing extends LightningElement {
     }
 
     get greeting() {
-        let name = "Shopper";
-        if (this.user) {
-            if (this.user.name) name = this.user.name;
-            else if (this.user.username) name = this.user.username;
+        let name = "Customer";
+        if (this.currentUser.data) {
+            if (this.currentUser.data.name) {
+                name = this.currentUser.data.name;    
+            }
         }
         let greeting = `Hi, ${name}!`;
         return greeting;
     }
     get hasFinancingDetails() {
-        let result = true;
-        if (!this.user.annualIncome) result = false;
-        if (!this.user.monthlyDebtPayments) result = false;
-        if (!this.user.ficoScore) result = false;
-        if (!this.user.birthDate) result = false;
+        let result = false;
+        let user = this.currentUser.data;
+        if (user) {
+            // if (!this.user.annualIncome) result = false;
+            // if (!this.user.monthlyDebtPayments) result = false;
+            // if (!this.user.ficoScore) result = false;
+            // if (!this.user.birthDate) result = false;  
+            //result = true;
+        }
+        
         return result;
     }
 }

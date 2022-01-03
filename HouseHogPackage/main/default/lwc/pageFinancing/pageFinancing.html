@@ -1,13 +1,13 @@
 <template>
     <div class="left-panel">
-        <template if:false={user}>
+        <template if:false={signedIn}>
             <c-util-content-box my-heading="Hi, shopper!">
                 <br>
-                <p> Oh no! These features are for members only!</p>
-                <c-util-button-link my-label="Sign in!"></c-util-button-link>
+                <p> Oh no! These features are for members only.</p>
+                <p> Please sign in or register a new account.</p>
             </c-util-content-box>
         </template>
-        <template if:true={user}>
+        <template if:true={signedIn}>
             <c-util-content-box my-heading={greeting}>
                 <br>
                 <template if:true={hasFinancingDetails}>
@@ -34,7 +34,7 @@
         </template>
     </div>
     <div class="right-panel">
-        <template if:true={user}>
+        <template if:true={signedIn}>
             <c-util-content-box my-heading="Mortgage Payment Calculator" input>
                 <br>
                 <!-- Mortgage calculator parameter inputs -->

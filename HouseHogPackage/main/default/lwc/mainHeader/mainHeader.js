@@ -2,17 +2,19 @@ import { LightningElement, wire } from 'lwc';
 import UserId from "@salesforce/apex/ExperienceController.UserId";
 import siteChannel from '@salesforce/messageChannel/siteChannel__c';
 import {subscribe, publish, MessageContext} from 'lightning/messageService';
+import getLogoutUrl from '@salesforce/apex/applauncher.IdentityHeaderController.getLogoutUrl';
+import isGuest from "@salesforce/user/isGuest";
 
 export default class MainHeader extends LightningElement {
     // CORE VARIABLES
     currentPage = "splash";
-    signedIn = false;;
+    signedIn = !isGuest;
 
-    @wire(UserId)
-    ValidateSignIn({ error, data }) {
-        if (data) { this.signedIn = true; }
-        else if (error) { this.signedIn = false; }
-    }
+    // @wire(UserId)
+    // ValidateSignIn({ error, data }) {
+    //     if (data) { this.signedIn = true; }
+    //     else if (error) { this.signedIn = false; }
+    // }
 
     // Lightning Message Service Controller
     @wire(MessageContext)
@@ -98,6 +100,12 @@ export default class MainHeader extends LightningElement {
             window.open("SelfRegister", "_self");
             return;
         }
+        if (this.currentPage == "signout") {
+            this.setPage("signin"); // No signout page... reset to Sign In
+            console.log("signing out....");
+            window.open(getLogoutUrl, "_self");
+            return;
+        }
     }
 
     // Consolidates SPA pages to one category
@@ -106,6 +114,7 @@ export default class MainHeader extends LightningElement {
         switch (target) {
             case "signin":
             case "signup":
+            case "signout":
                 result = false;
         }
         return result;
@@ -144,5 +153,5 @@ export default class MainHeader extends LightningElement {
 
         let expires = "expires="+d.toUTCString();
         document.cookie = cookieKey + "=" + toValue + ";" + expires + ";path=/";
-      }
+    }
 }
