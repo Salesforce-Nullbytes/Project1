@@ -11,10 +11,12 @@ export default class newTeacher extends LightningElement {
 
         insertNewTeacher({teacherName : newTeacherName, teacherEmail : newTeacherEmail})
             .then((result) => {
-               this.teacher = result;
+               alert("Signup Successful!");
             })
             .catch((error) => {
-                this.error = error;
+                alert("Signup Unsuccessful!");
             });
+
+        document.getElementsByClassName("teacherName").reset();
     }
 }

@@ -1,8 +1,7 @@
-public class TeacherController {
+public without sharing class TeacherController {
 
     @AuraEnabled
     public static void insertNewTeacher(String teacherName, String teacherEmail) {
-        //Teacher__c teacher = new Teacher__c (Name = teacherName, Teacher_Email__c = teacherEmail);
 
         try {
             Teacher__c teacher = new Teacher__c();
