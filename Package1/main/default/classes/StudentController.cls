@@ -1,5 +1,7 @@
 public class StudentController {
 
+    // Inserts a new student into Salesforce with the student name, parent name, and parent email from the experience site
+
     @AuraEnabled
     public static void insertNewStudent(String studentName, String parentName, String parentEmail) {
 

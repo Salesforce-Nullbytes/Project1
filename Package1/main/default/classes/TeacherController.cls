@@ -1,5 +1,7 @@
 public without sharing class TeacherController {
 
+       // Inserts a new teacher into Salesforce with the teacher name and teacher email from the experience site
+
     @AuraEnabled
     public static void insertNewTeacher(String teacherName, String teacherEmail) {
 
