@@ -13,6 +13,7 @@
     <tabs>Student__c</tabs>
     <tabs>Teacher__c</tabs>
     <tabs>standard-Product2</tabs>
+    <tabs>standard-Pricebook2</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>QKids_UtilityBar</utilityBar>
 </CustomApplication>
