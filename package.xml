@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<!-- Aura, Documents, Custom Indexes, EmailTemplate  -->
+<!-- not needed -->
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account.Annual_Income__c</members>
+        <members>Account.Birth_Date__c</members>
+        <members>Account.FICO__c</members>
+        <members>Account.Monthly_Debt_Payments__c</members>
+        <members>Account.Primary_Email__c</members>
+        <members>Account.Primary_Phone_Number__c</members>
+        <members>Account.Realtor__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>User.Entity_Affiliation__c</members>
+        <members>User.Entity_Group_ID__c</members>
+        <members>User.Entity_ID__c</members>
+        <members>User.IsManager__c</members>
+        <members>User.User_Category__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Case.cases</members>
+        <name>ListView</name>
+    </types>
+    <!-- Applications -->
+    <types>
+        <members>HouseHog_Financing</members>
+        <members>HouseHog_Real_Estate</members>
+        <name>CustomApplication</name>
+    </types>
+    <!-- Assignment Rules, AutoResponse Rules, Escalation Rules -->
+    <types>
+        <members>Case</members>
+        <name>AssignmentRules</name>
+    </types>
+        <types>
+        <members>Case</members>
+        <name>AutoResponseRules</name>
+    </types>
+        <types>
+        <members>Case</members>
+        <name>EscalationRules</name>
+    </types>
+    <!-- Audience -->
+    <types>
+        <members>Default_HouseHog Experience</members>
+        <name>Audience</name>
+    </types>
+    <!-- Content Assets -->
+    <types>
+        <members>hogicon</members>
+        <members>hogicon1</members>
+        <name>ContentAsset</name>
+    </types>
+    <!-- Classes -->
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <!-- Experience Bundle -->
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <!-- FlexiPages -->
+    <!-- <fullName>New Opportunity Page</fullName> -->
+    <types>
+        <members>HouseHog_Financing_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <!-- <fullName>New Opportunity Page</fullName> -->
+    <types>
+        <members>HouseHog_Real_Estate_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <!-- Flow -->
+    <types>
+        <members>Order_From_Property_Listing</members>
+        <name>Flow</name>
+    </types>
+    <!-- Layout -->
+    <types>
+        <members>Account-Account Layout</members>
+        <members>Agency__c-Agency Layout</members>
+        <members>Bank__c-Bank Layout</members>
+        <members>Banker__c-Banker Layout</members>
+        <members>Property__c-Property Layout</members>
+        <members>Prospect__c-Prospect Layout</members>
+        <members>Realtor__c-Realtor Layout</members>
+        <members>User-User Layout</members>
+        <name>Layout</name>
+    </types>
+    <!-- message channels -->
+    <types>
+        <members>*</members>
+        <name>LightningMessageChannel</name>
+    </types>
+   <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+   <types>
+        <members>*</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Case</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>HouseHog_Experience</members>
+        <name>CustomSite</name>
+    </types>
+    <version>52.0</version>
+</Package>
