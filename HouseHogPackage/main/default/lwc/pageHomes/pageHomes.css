@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    flex: 100%;
+}
+:host > c-util-content-box {
+    margin: 3rem;
+}
+.controls {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 0.4rem;
+}
+c-util-button-link {
+    float: right;
+}
+.all {
+    flex: 100%;
+}
+c-util-card span {
+    font-stretch: semi-condensed;
+}
+c-util-card span[slot=title] {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+c-util-card span[slot=text] {
+    font-family: monospace;
+    background-color: white;
+    font-size: 1rem;
+}

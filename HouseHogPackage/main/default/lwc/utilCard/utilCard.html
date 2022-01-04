@@ -1,0 +1,20 @@
+<template>
+    <div class="card">
+        <div class="leftCard">
+            <template if:true={image}>
+                <img src={image.link} alt={image.alt} />
+                <br>
+            </template>
+            <template if:true={status}>
+                {status}
+            </template>
+        </div>
+        <div class="slot">
+            <slot name="title"></slot>
+            <br>
+            <slot name="text"></slot>
+            <slot></slot>            
+        </div>
+        <div class="fav">&#9733;</div>
+    </div>
+</template>

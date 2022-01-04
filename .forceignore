@@ -6,6 +6,7 @@ package.xml
 
 **/appMenus
 **/groups
+**/networks
 
 # LWC configuration files
 **/jsconfig.json
@@ -13,3 +14,21 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+#package exclusions
+#  **/audience
+#  **/navigationMenus
+#  **/networkBranding
+#  **/experiences
+#  **/sites
+#other package exclusions
+#  **/escalationRules
+#  **/autoResponseRules
+#  **/settings
+#  **/assignmentRules
+#  **/profileSessionSettings
+#  **/profilePasswordPolicies
+#  **/email
+#  **/documents
+#  **/contentassets
+

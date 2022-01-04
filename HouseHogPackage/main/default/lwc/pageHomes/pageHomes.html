@@ -1,0 +1,58 @@
+<template>
+    <c-util-content-box my-heading="Search houses, and find your new home">
+        <br>
+        <template if:true={signedIn}>
+            <template if:true={hasProspects}>
+                <c-user-homes favorite-homes={userProspects.data}></c-user-homes>
+                <br>
+            </template>
+        </template>
+        <!-- Control panel for panel of all homes -->
+        <div class="controls">
+            <c-util-content-box my-heading="Filters:" input thin round>
+                <c-util-button-link
+                    my-label="Choose"
+                    event-key="choose"
+                ></c-util-button-link>
+            </c-util-content-box>
+            <c-util-content-box my-heading="Near Zip:" input thin round>
+                <c-util-button-link
+                    my-label="ziperrr"
+                    event-key="zip"
+                ></c-util-button-link>
+            </c-util-content-box>
+            <c-util-content-box my-heading="Sort By:" input thin round>
+                <c-util-button-link
+                    my-label="sorterrr"
+                    event-key="sort"
+                ></c-util-button-link>
+            </c-util-content-box>
+        </div>
+        <!-- Control panel end -->
+        <br>
+        <div class="all">
+            <c-util-card-holder my-heading="All Homes" round>
+                <!-- Display home card for each home in dataset -->
+                <template if:true={hasProperties}>
+                    <template for:each={allProperties.data} for:item="property" for:index="index">
+                        <c-util-card key={property.id} 
+                            image={defaultImage}
+                            data-index={index}
+                            status={property.Status__c}
+                        >
+                            <span slot="title">
+                                {property.Address__c}
+                                <br>
+                                {property.City__c},
+                                {property.State__c}
+                                {property.Zip_Code__c}
+                            </span>
+                            <span slot="text">{property.List_Price__c}</span>
+                            <span></span>
+                        </c-util-card>
+                    </template>    
+                </template>
+            </c-util-card-holder>    
+        </div>
+    </c-util-content-box>
+</template>

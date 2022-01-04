@@ -5,20 +5,7 @@
             "package": "HouseHogPackage",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "ExperiencePackage",
-            "package": "ExperiencePackage",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "default": true,
-            "dependencies": [
-                {
-                    "package": "HouseHogPackage",
-                    "versionNumber": "0.1.0.LATEST"
-                }
-            ]
+            "default": true
         }
     ],
     "name": "HouseHog",
@@ -30,6 +17,10 @@
         "HouseHogPackage@0.1.0-1": "04t5f000000W1O4AAK",
         "HouseHogPackage@0.1.0-2": "04t5f000000W2evAAC",
         "ExperiencePackage": "0Ho5f000000k9t9CAA",
-        "HouseHogPackage@0.1.0-3": "04t5f000000W2zyAAC"
+        "HouseHogPackage@0.1.0-3": "04t5f000000W2zyAAC",
+        "HouseHogPackage@0.1.0-7": "04t5f000000W4kwAAC",
+        "HouseHogPackage@0.1.0-8": "04t5f000000W4l1AAC",
+        "HouseHogPackage@0.1.0-9": "04t5f000000W6IxAAK",
+        "HouseHogPackage@0.1.0-10": "04t5f000000W6J2AAK"
     }
 }

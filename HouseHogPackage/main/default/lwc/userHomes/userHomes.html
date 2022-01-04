@@ -1,0 +1,23 @@
+<template>
+    <template if:true={prospectsList}>
+        <c-util-card-holder my-heading="Tagged Property Interests" round>
+            <template for:each={prospectList} for:item="property" for:index="index">
+                <c-util-card key={property.id} 
+                    image={defaultImage}
+                    data-index={index}
+                    status={property.Status__c}
+                >
+                    <span slot="title">
+                        {property.Prospect__c.Address__c}
+                        <br>
+                        {property.Prospect__c.City__c},
+                        {property.Prospect__c.State__c}
+                        {property.Prospect__c.Zip_Code__c}
+                    </span>
+                    <span slot="text">${property.Prospect__c.List_Price__c}</span>
+                    <span></span> <!-- Default slot... -->
+                </c-util-card>
+            </template>
+        </c-util-card-holder>
+    </template>
+</template>
