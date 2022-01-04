@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>AutoRespond Case</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <formula>true</formula>
+            <senderEmail>zelizach@gmail.com</senderEmail>
+            <senderName>HouseHog</senderName>
+            <template>unfiled$public/CaseResponse</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

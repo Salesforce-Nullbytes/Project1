@@ -1,0 +1,14 @@
+Hello, {!Account.Name}:
+
+A new case has been created, and a representative will get back to you as soon as possible.
+
+Case Reason:  {!Case.Reason}
+Subject: {!Case.Subject}
+
+Case Description: 
+{!Case.Description}
+
+Assigned to: {!Case.OwnerFullName}
+
+Thank you for your patience,
+HouseHog

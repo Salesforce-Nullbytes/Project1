@@ -1,0 +1,48 @@
+<template>
+        <form action="https://force-customization-2072-dev-ed.cs43.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+        
+        <input type=hidden name="orgid" value="00D63000000d8b0">
+        <input type=hidden name="retURL" value="https://sandbox-househog2-developer-edition.cs43.force.com/s/">
+        
+        <!--  ----------------------------------------------------------------------  -->
+        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+        <!--  these lines if you wish to test in debug mode.                          -->
+        <!--  <input type="hidden" name="debug" value=1>                              -->
+        <!--  <input type="hidden" name="debugEmail" value="zelizach@gmail.com">      -->
+        <!--  ----------------------------------------------------------------------  -->
+        <table>
+            <tr>
+                <td><label for="name">Contact Name</label></td>
+                <td><input  id="name" maxlength="80" name="name" size="20" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input  id="email" maxlength="80" name="email" size="20" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone</label></td>
+                <td><input  id="phone" maxlength="40" name="phone" size="20" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="subject">Subject</label></td>
+                <td><input  id="subject" maxlength="80" name="subject" size="20" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description</label></td>
+                <td><textarea name="description"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="reason">Case Reason</label></td>
+                <td><select  id="reason" name="reason">
+                    <option value="">--None--</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Breakdown">Breakdown</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Other">Other</option>
+                </select><br></td>
+            </tr>
+            <tr><td><input type="submit" name="submit"></td></tr>
+        </table>
+    </form>
+    
+</template>
