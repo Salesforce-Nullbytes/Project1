@@ -10,8 +10,8 @@ public with sharing class OrderTestHelper {
         test.startTest();
         Pricebook2 bookId = [SELECT Id FROM Pricebook2 WITH SECURITY_ENFORCED LIMIT 1 ]; 
         Account account = [SELECT Id FROM Account WITH SECURITY_ENFORCED LIMIT 1];
-    
-        Order order = new Order(accountId = account.ID, status = 'Draft', EffectiveDate = System.today(), Pricebook2 = bookId);
+        String toppingList = 'Pepperoni;';
+        Order order = new Order(accountId = account.ID, status = 'Draft', EffectiveDate = System.today(), Pricebook2 = bookId, toppings__c = toppingList);
         insert order;
         test.stopTest();
         System.assertNotEquals(null,order.id);
