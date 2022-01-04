@@ -1,0 +1,17 @@
+
+
+h4 {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.fields {
+    text-align: center;
+}
+
+.columns {
+    width: 50%;
+    float: left;
+}
+
