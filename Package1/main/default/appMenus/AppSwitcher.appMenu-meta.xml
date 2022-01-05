@@ -64,4 +64,8 @@
         <name>Qkids1</name>
         <type>Network</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>QKids</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

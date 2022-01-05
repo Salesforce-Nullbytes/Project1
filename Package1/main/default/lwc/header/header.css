@@ -1,0 +1,26 @@
+.main-header {
+    background-color: #33cdff;
+    margin-top: -30px;
+    margin: -15px;
+}
+
+.menu {
+    float: right;
+    padding: 15px;
+}
+
+span {
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}

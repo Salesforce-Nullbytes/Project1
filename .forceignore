@@ -3,8 +3,15 @@
 #
 
 package.xml
-
-**/profiles
+**/profiles/Qkids1 Profile.profile-meta.xml
+**/profiles/Qkids2 Profile.profile-meta.xml
+**/appMenus
+**/experiences
+**/audience
+**/navigationMenus
+**/networkBranding
+**/networks
+**/sites
 
 
 # LWC configuration files

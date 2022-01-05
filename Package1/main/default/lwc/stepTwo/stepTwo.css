@@ -1,0 +1,38 @@
+.body {
+    background-color: #FBF6CD;
+    padding: 30px 10% 30px 30px;
+    height: 150px;
+}
+
+/*.body:hover {
+    margin: 0;
+    transition: .5s;
+}*/
+
+h4 {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0px;
+}
+
+.number_right {
+    float: right;
+    font-size: 125px;
+    padding-right: 15px;
+    margin-top: -50px;
+}
+
+.text_right {
+    float: right;
+}
+
+img {
+    float: left;
+    height: 100px;
+    padding-left: 100px;
+}

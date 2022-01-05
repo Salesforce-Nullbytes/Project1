@@ -1,0 +1,16 @@
+<template>
+    <div class="column">
+        <button onclick={clickTeacherSignup}>New Teacher<br/>Sign Up</button>
+    </div>
+    <div class="column">
+        <button onclick={clickStudentSignup}>New Student<br/>Sign Up</button>
+    </div>
+
+    <template if:true={showNewTeacher}>
+        <c-new-teacher></c-new-teacher>
+    </template>
+
+    <template if:true={showNewStudent}>
+        <c-new-student></c-new-student>
+    </template>
+</template>

@@ -1,0 +1,26 @@
+<template>
+<form action="https://inspiration-nosoftware-4730-dev-ed.cs77.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+    <input type=hidden name="orgid" value="00D0t000000MdNP">
+    <input type=hidden name="retURL" value="https://sandbox-qkids2-developer-edition.cs77.force.com/">
+    
+        <h4>Have a Question?</h4>
+        <div class="fields">
+            <div class="columns">
+    <label for="name">Contact Name: </label><br><input  id="name" maxlength="80" name="name" size="20" type="text" /><br><br> </div>
+    
+    <div class="columns">
+    <label for="email">Email: </label><br><input  id="email" maxlength="80" name="email" size="20" type="text" /><br><br> </div>
+    
+    <div class="columns">
+    <label for="phone">Phone: </label><br><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br><br></div>
+    
+    <div class="columns">
+    <label for="subject">Subject: </label><br><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br><br></div>
+    
+    <label for="description">Description: </label><br><textarea name="description"></textarea><br>
+    
+    <input type="submit" name="submit">
+</div>
+    </form>
+</template>
